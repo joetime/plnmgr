@@ -1,0 +1,767 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true" CodeBehind="PlanManager.master.cs" Inherits="ACWeb.PlanManager.PlanManager" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Css" runat="server">
+
+    <asp:ContentPlaceHolder ID="CssPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MenuLeft" runat="server">
+    <asp:ContentPlaceHolder ID="AsidePlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Content" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Javascript" runat="server">
+    <!-- numeral library
+        -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+
+    <!-- A file of test data for the page
+        -->
+    <script src="../Scripts/planmanager.models.js"></script>
+
+    <!-- the masterpage viewmodel 
+        -->
+    <script>
+        var masterPageModel = function () { };
+    </script>
+
+    <!-- a template for Plan details
+        -->
+    <script id="planDetailsForm" type="text/template">
+
+        <h2 data-bind="text: name, click: $root.deselectProject"></h2>
+        <div class="pull-right">
+            <div class="btn-group" data-bind="visible: !$root.selectedProject()">
+                <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
+                    Plan Actions <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Copy Plan</a></li>
+                    <li><a href="#">Lock Plan</a></li>
+                    <li><a href="#">Cancel Plan</a></li>
+                    <li><a href="#">Delete Plan</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-sm btn-primary puxll-right" 
+                data-bind="visible: uiNew() || uiDirty(), click: $root.savePlan">Save</button>
+        </div>
+        <div>
+            <!-- ko template: { if: $root.selectedProject, name: 'projectDetailsForm', data: $root.selectedProject } -->
+            <!-- /ko -->
+        </div>
+
+        <div data-bind="visible: !($root.selectedProject())">
+
+            <ul id="planTabs" class="nav nav-tabs">
+                <li class="active"><a href="#planDashboard" data-toggle="tab">Dashboard</a></li>
+                <li><a href="#planProjects" data-toggle="tab">Projects</a></li>
+                <li><a id="planDetailsTabTrigger" href="#planDetails" data-toggle="tab">Details</a></li>
+            </ul>
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="planDashboard">
+
+                    <h3 data-bind="text: 'Total Estimate: ' + numeral(planTotal()).format('$ 0,0')"></h3>
+                    <hr />
+
+
+                    <div>
+                        <h4>Expenditures: 
+                    <span data-bind="text: numeral(planExpendituresTotal()).format('$ 0,0')"></span>
+                            (<span data-bind="text: numeral(planExpendituresTotal() / planTotal()).format('00%')"></span>)
+                        </h4>
+                        <div class="progress progress-fat">
+                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                data-bind=" attr: { style: 'background-color: #006666; width:' + numeral(planExpendituresTotal() / planTotal()).format('00%') }">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-bind="foreach: breakouts">
+
+                        <h4><span data-bind="text: name"></span></h4> 
+                        
+                        <div class="progress progress-fat" data-bind="foreach: vals">
+                          <div class="progress-bar progress-bar-success" 
+                              data-bind="visible: parseInt(value) > 10, attr: {
+style:
+    'width:' + numeral(value / $parents[1].planTotal()).format('00%') + '; ' +
+    'background-color:' + color
+}">
+                            <span class="label label-default" 
+                                data-bind="text: name + ' ' + numeral(value).format('$0.0a'), attr: { style: 'background-color:' + color }"></span>
+                          </div>
+                        </div>
+
+                    </div>
+
+
+
+            <!-- table with some dollar figures -->
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>Plan Total Estimate</td>
+                    <td class="text-right" data-bind="text: numeral(planTotal()).format('$ 0,0')"></td>
+                </tr>
+                <tr>
+                    <td>Base Subtotal</td>
+                    <td class="text-right" data-bind="text: numeral(planBaseSubtotal()).format('0,0')"></td>
+                    <td class="text-right" data-bind="text: numeral(planBaseSubtotal() / planTotal()).format('00%')"></td>
+                </tr>
+                <tr>
+                    <td>Markup Subtotal</td>
+                    <td class="text-right" data-bind="text: numeral(planMarkupsTotal()).format('0,0')"></td>
+                    <td class="text-right" data-bind="text: numeral(planMarkupsTotal() / planTotal()).format('00%')"></td>
+                </tr>
+            </table>
+            
+            </div>
+
+                <div class="tab-pane" id="planProjects">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 data-bind="text: 'Plan Total Estimate: $ ' + numeral(planTotal()).format('0,0')"></h3>
+                        </div>
+                        <div class="well-sm pull-right">
+                           
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                Add Project <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a data-bind="click: $root.addProject"
+                                    href="#">Empty Project</a></li>
+                                <li><a data-bind="click: $root.openSearch" href="#searchModal">AssetCALC Cost</a></li>
+                                
+                              </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <table class="table table-hover table-sort">
+                        <thead>
+                            <tr>
+                                <th data-sort="string" class="text-muted">Id</th>
+                                <th data-sort="string">Projects</th>
+                                <th data-sort="string">Status</th>
+                                <th data-sort="float" class="text-right">Estimate</th>
+                                <th data-sort="float" class="text-right">Markups</th>
+
+                                <th data-sort="float" class="text-right">Expenditures</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: projects">
+                            <tr class="tr-clickable" data-bind="click: $root.selectProject">
+                                <td class="text-muted" data-bind="text: identifier"></td>
+                                <td class="text-focus" data-bind="text: name"></td>
+                                <td data-bind="text: status"></td>
+                                <td class="text-right" data-bind="text: projectTotalFormatted"></td>
+                                <td class="text-right" data-bind="text: numeral(markupsTotal()).format('0,0')"></td>
+                                <td class="text-right" data-bind="text: numeral(expendituresTotal()).format('0,0')"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-right" data-bind="text: numeral(planTotal()).format('0,0')"></td>
+                                <td class="text-right" data-bind="text: numeral(planMarkupsTotal()).format('0,0')"></td>
+                                <td class="text-right" data-bind="text: numeral(planExpendituresTotal()).format('0,0')"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+
+            <div class="tab-pane" id="planDetails">
+                <form class="form-horizontal" role="form">
+                    
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Plan Name</label>
+                        <div class="col-md-6">
+                            <input id="planNameInput" type="text" class="form-control input-lg" placeholder="Plan Name"
+                                data-bind="value: name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Identifier</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control input-sm" placeholder="Identifier"
+                                data-bind="value: identifier">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Summary</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="Summary"
+                                data-bind="value: summary">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Description</label>
+                        <div class="col-md-7">
+                            <textarea class="form-control input-sm" placeholder="Description"
+                                data-bind="value: description"></textarea>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Time Frame</label>
+                        <div class="col-md-3">
+                            <input type="date" data-bind="value: startDate" class="form-control" />
+                        </div>
+                        <div class="col-md-1">-</div>
+                        <div class="col-md-3 text-left">
+                            <input type="date" data-bind="value: endDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Fiscal Year</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control input-sm" placeholder="ex 2014"
+                                data-bind="value: fiscalYear">
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Contact</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control input-sm" placeholder="ex 2014"
+                                data-bind="value: contact">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Priority</label>
+                        <div class="col-md-3">
+                            <select class="form-control"
+                                data-bind="value: priority">
+                                <option value=""> - Select - </option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Notes</label>
+                        <div class="col-md-7">
+                            <textarea class="form-control input-sm" placeholder="Notes"
+                                data-bind="value: notes"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Exceptions</label>
+                        <div class="col-md-7">
+                            <textarea class="form-control input-sm" placeholder="Exceptions"
+                                data-bind="value: exceptions"></textarea>
+                        </div>
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+
+        </div>
+
+    </script>
+
+    <!-- a template for Project details
+        -->
+    <script id="projectDetailsForm" type="text/template">
+        <h3><span data-bind="text: name"></span></h3>
+        <div class="pull-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
+                    Project Actions <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Move Project</a></li>
+                    <li><a href="#">Copy Project</a></li>
+                    <li><a href="#">Lock Project</a></li>
+                    <li><a href="#">Cancel Project</a></li>
+                    <li><a href="#">Delete Project</a></li>
+
+                </ul>
+            </div>
+            <button class="btn btn-sm btn-default puxll-right" data-bind="click: $root.deselectProject">Close</button>
+            <button class="btn btn-sm btn-primary puxll-right" 
+                data-bind="visible: uiNew || uiDirty, click: $root.saveProject">Save</button>
+        </div>
+        <ul class="nav nav-tabs">
+            <!--<li class=""><a href="#projectHome" data-toggle="tab">Project</a></li>-->
+            <li class="active"><a href="#projectDetails" data-toggle="tab">Details</a></li>
+            <li><a href="#attachments" data-toggle="tab">Attachments</a></li>
+            <li><a href="#estimate" data-toggle="tab">Estimate</a></li>
+            <li><a href="#breakdowns" data-toggle="tab">Breakdowns</a></li>
+            <li><a href="#expenditures" data-toggle="tab">Expenditures</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="projectHome">
+            </div>
+            <div class="tab-pane active" id="projectDetails">
+                <!-- ko template: { name: 'projectDetailsBasicsForm' } -->
+                <!-- /ko -->
+            </div>
+            <div class="tab-pane" id="attachments">
+                <!-- ko template: { name: 'projectDetailsAttachmentsForm' } -->
+                <!-- /ko -->
+            </div>
+            <div class="tab-pane" id="estimate">
+
+                <!-- ko template: { name: 'projectDetailsEstimatesForm' } -->
+                <!-- /ko -->
+            </div>
+            <div class="tab-pane" id="breakdowns">
+                <!-- ko template: { name: 'projectDetailsBreakdownsForm' } -->
+                <!-- /ko -->
+            </div>
+            <div class="tab-pane" id="expenditures">
+                <!-- ko template: { name: 'projectDetailsExpendituresForm' } -->
+                <!-- /ko -->
+            </div>
+
+        </div>
+
+
+
+
+    </script>
+
+    <script id="projectDetailsAttachmentsForm" type="text/template">
+        <h4>Attachments</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <input id="uploadImage" class="form-control" type="file" name="myPhoto" onchange="PreviewImage();" multiple />
+            </div>
+            <ul id="queuedFileList" data-bind="visible: $root.queuedFiles, foreach: $root.queuedFiles" class="list-unstyled">
+                <li class="col-md-2">
+                    <img class="thumbnail" data-bind="attr: { src: source }" />
+                    <span contenteditable class="text-muted" data-bind="text: name"></span>
+                </li>
+            </ul>
+
+        </div>
+        <div class="row">
+            <ul data-bind="foreach: attachments" class="list-unstyled">
+                <li class="col-md-3">
+                    <img class="thumbnail" data-bind="visible: type() == 'Photo', attr: { src: path() + filename() }" />
+                    <span class="text-muted" data-bind="text: description"></span>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <script id="projectDetailsEstimatesForm" type="text/template">
+        <div>
+            <div class="row">
+                <div class="col-md-6">
+
+                    <h3 data-bind="text: 'Project Total: $' + projectTotalFormatted()"></h3>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="progress progress-fat">
+                  <div class="progress-bar bg-color-1" 
+                      data-bind="attr: { style: 'width: ' + numeral(baseCost()/projectTotal()).format('00%') }">
+                  </div>
+                  <div class="progress-bar bg-color-2" 
+                      data-bind="attr: { style: 'width: ' + numeral(baseCost() * baseContingency() / 100 / projectTotal()).format('00%') }">
+                  </div>
+                  <div class="progress-bar bg-color-3" 
+                      data-bind="attr: { style: 'width: ' + numeral(markupsTotal() / projectTotal()).format('00%') }">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                    <span class="badge bg-color-1">&nbsp;</span>
+                    <label class="control-label">Base Cost</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control text-right"
+                            data-bind="value: baseCost">
+                        <%--<span class="input-group-addon">.00</span>--%>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <span class="badge bg-color-2">&nbsp;</span>
+                    <label class="control-label">Base Contin.</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">X</span>
+                        <input type="text" class="form-control text-right"
+                            data-bind="value: baseContingency">
+                        <span class="input-group-addon">%</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label">Base Subtotal</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">=</span>
+                        <input class="form-control text-right text-success" disabled
+                            data-bind="value: numeral(baseSubtotal()).format('0,0')">
+                        <%--<span class="input-group-addon">.00</span>--%>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <span class="badge bg-color-3">&nbsp;</span>
+                    <label class="control-label">Markups Total</label>
+                    <div id="markupTotalInputGroup" class="input-group">
+                        <span class="input-group-addon">+</span>
+                        <input class="form-control text-right text-success" disabled
+                            data-bind="value: numeral(markupsTotal()).format('0,0')">
+                        <%--<span class="input-group-addon">.00</span>--%>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label">Project Subtotal</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">=</span>
+                        <input class="form-control text-right text-success" disabled
+                            data-bind="value: numeral(projectSubtotal()).format('0,0')">
+                        <%--<span class="input-group-addon">.00</span>--%>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <span class="badge bg-color-gray">&nbsp;</span>
+                    <label class="control-label">Project Contin.</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">X</span>
+                        <input class="form-control text-right text-success"
+                            data-bind="value: projectContingency">
+                        <span class="input-group-addon">%</span>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h3>Markups</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table xtable-condensed table-hover table-sort">
+                        <thead>
+                            <tr>
+                                <th data-sort="string">
+                                    <!--&#10003-->
+                                </th>
+                                <th data-sort="string" class="texxt-muted">Category
+                                </th>
+                                <th data-sort="string" class="texxt-muted">Type
+                                </th>
+                                <th class="texxt-muted" colspan="2">Value
+                                </th>
+                                <th class="texxt-muted text-right">Total
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: markupTemplates">
+                            <tr data-bind="css: { success: uiChecked, 'text-muted': !uiChecked() }">
+                                <td>
+                                    <!--  data-bind="attr: { 'data-sort-value': uiChecked() ? 0 : 1 }" -->
+                                    <input type="checkbox" data-bind="checked: uiChecked" /></td>
+                                <td data-bind="text: category"></td>
+                                <td data-bind="text: name"></td>
+                                <td>
+                                    <input class="form-control input-sm text-right"
+                                        data-bind="css: { hideme: !uiChecked() }, value: defaultValue">
+                                </td>
+                                <td>
+                                    <select class="form-control input-sm"
+                                        data-bind="css: { hideme: !uiChecked() }, value: type">
+                                        <option>$</option>
+                                        <option>%</option>
+                                    </select></td>
+                                <td class="text-right">
+                                    <span data-bind="css: { hideme: !uiChecked() }, text: calculatedValue($parent.baseSubtotal())"></span>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </script>
+
+    <script id="projectDetailsExpendituresForm" type="text/template">
+        <div class="row">
+            <h3 data-bind="text: 'Total Expenditures: $ ' + numeral(expendituresTotal()).format('0,0')"></h3>
+
+            <div class="pull-right">
+                <button class="btn btn-sm btn-success">Add Expenditure</button>
+            </div>
+        </div>
+        <table class="table table-condensed table-hover">
+            <thead>
+                <th></th>
+                <th class="text-muted">Date</th>
+                <th class="text-muted text-right">Amt</th>
+            </thead>
+            <tbody data-bind="foreach: expenditures">
+                <tr>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: date"></td>
+                    <td class="text-right" data-bind="text: dollarVal"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right" data-bind="text: numeral(expendituresTotal()).format('0,0')"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </script>
+
+    <script id="projectDetailsBreakdownsForm" type="text/template">
+        <div class="row">
+            <!--<div class="col-md-3 well-sm">
+
+                <h3 data-bind="text: 'Project Total: $' + projectTotalFormatted()"></h3>
+                <hr />
+
+            </div>-->
+        </div>
+        <div class="row" data-bind="foreach: breakouts">
+            <div class="col-md-6">
+                <h3 data-bind="text: name"></h3>
+                <div class="text-center">
+                    <canvas height="200" width="200" id="piechartCanvas" data-bind="pieChart: pieData()"></canvas>
+                </div>
+                <table class="table table-borderxed table-hover">
+                    <tbody data-bind="foreach: categories">
+                        <tr>
+                            <td>
+                                <div data-bind="attr: { style: 'background-color: ' + color() }">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </td>
+                            <td data-bind="text: name"></td>
+                            <td data-bind="text: numeral(100 * dollarVal() / $parents[1].projectTotal()).format('0') + ' %' "></td>
+                            <td>
+                                <input type="number" step="1" class="form-control input-sm"
+                                    data-bind="value: dollarVal"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <td></td>
+                        <td>Unallocated </td>
+                        <td data-bind="text: numeral(100 * ($parent.projectTotal() - allocatedTotal()) / $parent.projectTotal()).format('0') + ' %' "></td>
+                        <td data-bind="text: numeral($parent.projectTotal() - allocatedTotal()).format('0')"></td>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </script>
+
+    <script id="projectDetailsBasicsForm" type="text/template">
+        <form class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Project Name</label>
+                <div class="col-md-6">
+                    <input id="projectNameInput" type="text" class="form-control input-lg" placeholder="Plan Name"
+                        data-bind="value: name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Identifier</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control input-sm" placeholder="Identifier"
+                        data-bind="value: identifier">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Summary</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="Summary"
+                        data-bind="value: summary">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Building/Site</label>
+                <div class="col-md-3">
+                    <select class="form-control"
+                        data-bind="value: location">
+                        <option value=""> - Select - </option>
+                        <option>Carlin Hall</option>
+                        <option>Detention Facility</option>
+                        <option>Fire Station 1</option>
+                        <option>Fire Station 2</option>
+                        <option>Fire Station 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Description</label>
+                <div class="col-md-7">
+                    <textarea class="form-control input-sm" placeholder="Description"
+                        data-bind="value: description"></textarea>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Time Frame</label>
+                <div class="col-md-3">
+                    <input type="date" class="form-control" />
+                </div>
+                <div class="col-md-1">-</div>
+                <div class="col-md-3">
+                    <input type="date" class="form-control" />
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Fiscal Year</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control input-sm" placeholder="ex 2014"
+                        data-bind="value: fiscalYear">
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Account Number</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control input-sm" placeholder="ex A78-997"
+                        data-bind="value: accountNumber">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Priority</label>
+                <div class="col-md-3">
+                    <select class="form-control"
+                        data-bind="value: priority">
+                        <option>High</option>
+                        <option>Medium</option>
+                        <option>Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Status</label>
+                <div class="col-md-3">
+                    <select class="form-control"
+                        data-bind="value: status, options: $root.statusOptions">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Category</label>
+                <div class="col-md-3">
+                    <select class="form-control"
+                        data-bind="value: category">
+                        <option value="">- Select -</option>
+                        <option>Energy</option>
+                        <option>Transportation</option>
+                    </select>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Notes</label>
+                <div class="col-md-7">
+                    <textarea class="form-control input-sm" placeholder="Notes"
+                        data-bind="value: notes"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-md-2 control-label">Exceptions</label>
+                <div class="col-md-7">
+                    <textarea class="form-control input-sm" placeholder="Exceptions"
+                        data-bind="value: exceptions"></textarea>
+                </div>
+            </div>
+            <!--
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn btn-default"
+                        data-bind="click: $root.saveProject">
+                        Save Changes</button>
+                </div>
+            </div>
+        </form>
+
+    </script>
+
+    <script id="searchModalTemplate" type="text/template">
+        <div class="modal faxde" id="searchModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Search &amp; Add</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-2">
+                                    <input id="searchInput" class="form-control search-field" placeholder="Type to Search"
+                                        value="Type to Search" />
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary" data-bind="click: doSearch">Search</button>
+                                    <button class="btn btn-default" data-bind="click: clearSearch">Clear</button>
+                                </div>
+                            </div>
+                        <hr />
+                            <table id="searchResultsTable" class="table table-condensed table-sort table-hover"
+                                data-bind="visible: $root.searchResults().length > 0">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" /></th>
+                                        <th data-sort="number" class="th-muted">Id</th>
+                                        <th data-sort="string">Site</th>
+                                        <th data-sort="string">Description</th>
+                                        <th data-sort="string">Category</th>
+                                        <th data-sort="string">Priority</th>
+                                        <th data-sort="number">RUL</th>
+                                        <th data-sort="number" class="th-right">Cost</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: $root.searchResults">
+                                    <tr data-bind="attr: { 'data-id': id }">
+                                        <th><input type="checkbox" /></th>
+                                        <td data-bind="text: id" class="muted"></td>
+                                        <td data-bind="text: site"></td>
+                                        <td data-bind="text: name"></td>
+                                        <td data-bind="text: category"></td>
+                                        <td data-bind="text: priority"></td>
+                                        <td data-bind="text: rul"></td>
+                                        <td data-bind="text: cost" class="td-right"></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success"
+                                                data-bind="click: $root.addProjectAssetCalc">Add</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        
+                    </div><!--
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>-->
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </script>
+
+    <asp:ContentPlaceHolder ID="JavascriptPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

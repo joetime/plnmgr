@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D8ABB5C-5A5F-46AB-BDBD-E3623F1EBE65}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACWeb</RootNamespace>
+    <AssemblyName>ACWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ACTest\Chartjs_Test.aspx" />
+    <Content Include="ACTest\HistoryTest.aspx" />
+    <Content Include="ACTest\Menu_Master_Test.aspx" />
+    <Content Include="ACTest\Site_Master_Test.aspx" />
+    <Content Include="Content\assetcalc.css" />
+    <Content Include="Content\xxassetcalc.css" />
+    <Content Include="Content\xxassetcalc.input.css" />
+    <Content Include="Content\xxassetcalc.nav.css" />
+    <Content Include="Content\assetcalc.test.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\xxbootstrap-responsive.css" />
+    <Content Include="Content\xxbootstrap-responsive.min.css" />
+    <Content Include="Content\xxbootstrap.css" />
+    <Content Include="Content\xxbootstrap.min.css" />
+    <Content Include="Content\chosen-flatten.css" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
+    <Content Include="Content\assetcalc.navbar.css" />
+    <Content Include="Content\xxassetcalc.table.css" />
+    <Content Include="Content\xxflatstrap.css" />
+    <Content Include="Content\xxassetcalc.pm.css" />
+    <Content Include="Content\assetcalc.chzn.css" />
+    <Content Include="Content\images\click-to-add-photo.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="packages.config" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Content\bootstrap-chosen.less" />
+    <Content Include="Content\xxassetcalc.print.css" />
+    <Content Include="Menu.master" />
+    <Content Include="PlanManager\Home.aspx" />
+    <Content Include="ProjectManager\ProjectManager.master" />
+    <Content Include="Scripts\assetcalc.chart.js" />
+    <Content Include="Scripts\assetcalc.pm.project.js" />
+    <Content Include="Scripts\assetcalc.pm.task.js" />
+    <Content Include="ProjectManager\Templates.ProjectManager.master" />
+    <Content Include="PlanManager\PlanManager.master" />
+    <None Include="Properties\PublishProfiles\alphatest.pubxml" />
+    <None Include="Properties\PublishProfiles\AssetCALC4Demo.pubxml" />
+    <None Include="Scripts\libs\jquery-2.0.2.intellisense.js" />
+    <Content Include="ProjectManager\Home.aspx" />
+    <Content Include="Scripts\assetcalc.js" />
+    <Content Include="Scripts\assetcalc.test.js" />
+    <Content Include="Scripts\planmanager.models.js" />
+    <Content Include="Scripts\planmanager.view.js" />
+    <Content Include="Scripts\libs\bootstrap.js" />
+    <Content Include="Scripts\libs\bootstrap.min.js" />
+    <Content Include="Scripts\libs\underscore.js" />
+    <Content Include="Scripts\libs\xxbootstrap.js" />
+    <Content Include="Scripts\libs\xxbootstrap.min.js" />
+    <Content Include="Scripts\libs\chart.js" />
+    <Content Include="Scripts\chart.ko.js" />
+    <Content Include="Scripts\chart.ko.test.js" />
+    <Content Include="Scripts\libs\chosen.jquery.js" />
+    <Content Include="Scripts\libs\chosen.jquery.min.js" />
+    <Content Include="Scripts\assetcalc.pm.vm.js" />
+    <Content Include="Scripts\libs\holder.js" />
+    <Content Include="Scripts\libs\jquery-2.0.2.js" />
+    <Content Include="Scripts\libs\jquery-2.0.2.min.js" />
+    <Content Include="Scripts\libs\jquery.cookie.js" />
+    <Content Include="Scripts\libs\knockout-2.2.1.debug.js" />
+    <Content Include="Scripts\libs\knockout-2.2.1.js" />
+    <Content Include="Scripts\libs\stupidtable.js" />
+    <Content Include="Scripts\libs\stupidtable.min.js" />
+    <Content Include="Scripts\assetcalc.test.pm.js" />
+    <Content Include="Scripts\libs\toastr.js" />
+    <Content Include="Scripts\libs\toastr.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\libs\jquery-2.0.2.min.map" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACTest\Chartjs_Test.aspx.cs">
+      <DependentUpon>Chartjs_Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACTest\Chartjs_Test.aspx.designer.cs">
+      <DependentUpon>Chartjs_Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACTest\HistoryTest.aspx.cs">
+      <DependentUpon>HistoryTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACTest\HistoryTest.aspx.designer.cs">
+      <DependentUpon>HistoryTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACTest\Menu_Master_Test.aspx.cs">
+      <DependentUpon>Menu_Master_Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACTest\Menu_Master_Test.aspx.designer.cs">
+      <DependentUpon>Menu_Master_Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACTest\Site_Master_Test.aspx.cs">
+      <DependentUpon>Site_Master_Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACTest\Site_Master_Test.aspx.designer.cs">
+      <DependentUpon>Site_Master_Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.master.cs">
+      <DependentUpon>Menu.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.master.designer.cs">
+      <DependentUpon>Menu.master</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\PlanManager.master.cs">
+      <DependentUpon>PlanManager.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\PlanManager.master.designer.cs">
+      <DependentUpon>PlanManager.master</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectManager\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectManager\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectManager\ProjectManager.master.cs">
+      <DependentUpon>ProjectManager.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectManager\ProjectManager.master.designer.cs">
+      <DependentUpon>ProjectManager.master</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectManager\Templates.ProjectManager.master.cs">
+      <DependentUpon>Templates.ProjectManager.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectManager\Templates.ProjectManager.master.designer.cs">
+      <DependentUpon>Templates.ProjectManager.master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\planmanager.testdata.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACData\ACData.csproj">
+      <Project>{d972da99-6b79-4ebe-9c98-34a4682c8633}</Project>
+      <Name>ACData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACLib\ACLib.csproj">
+      <Project>{d396b33a-7515-42f6-9a87-d3e2e787e013}</Project>
+      <Name>ACLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoeLib\JoeLib.csproj">
+      <Project>{1a029879-8543-4b66-b5db-dffea2cd5764}</Project>
+      <Name>JoeLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="tmp\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55377/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

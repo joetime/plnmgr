@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="ACWeb.Menu" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Css" runat="server">
+    <asp:ContentPlaceHolder ID="Css" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AssetCALC v0.1</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-inverse">
+            <ul class="nav navbar-nav">
+                
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Cost Library</a></li>
+                <li><a href="#">Reports</a></li>
+                <li class="active"><a href="#">Projects</a></li>
+
+                <!--<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>-->
+
+                <li>
+                    <asp:ContentPlaceHolder ID="MenuLeft" runat="server"></asp:ContentPlaceHolder>
+                </li>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+
+</asp:Content>
+<asp:Content ContentPlaceHolderID="Javascript" runat="server">
+
+    <!-- Menu.master javascript -->
+    <script></script>
+    <!-- END Menu.master javascript -->
+
+    <asp:ContentPlaceHolder ID="Javascript" runat="server"></asp:ContentPlaceHolder>
+
+</asp:Content>

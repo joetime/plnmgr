@@ -1,0 +1,13 @@
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\ACWeb.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\ACWeb.pdb
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\ACData.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\ACLib.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\EntityFramework.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\JoeLib.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\ACData.pdb
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\ACLib.pdb
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\JoeLib.pdb
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\bin\EntityFramework.xml
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\obj\Debug\ACWeb.csprojResolveAssemblyReference.cache
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\obj\Debug\ACWeb.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\ACWeb\obj\Debug\ACWeb.pdb

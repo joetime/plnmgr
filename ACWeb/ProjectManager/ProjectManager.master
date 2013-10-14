@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" MasterPageFile="Templates.ProjectManager.master" AutoEventWireup="true" CodeBehind="ProjectManager.master.cs" Inherits="ACWeb.ProjectManager.ProjectManager" %>
+
+<asp:Content ID="Css" ContentPlaceHolderID="Css" runat="server">
+    <link href="../Content/assetcalc.pm.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="Css" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="NavBarLeft" ContentPlaceHolderID="MenuLeft" runat="server">
+    <asp:ContentPlaceHolder ID="MenuLeft" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content" ContentPlaceHolderID="Content" runat="server">
+
+    <div class="container" id="projectManagerContainer">
+
+        <!--<i id="collapseButton" data-bind="click: togglePanel" class="icon-chevron-left hidden-print"></i>-->
+
+        <div class="row">
+
+            <!-- lefthand panel -->
+            <div id="leftPanel" class="col-lg-3 hidden-print">
+
+                <!--menu-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">AssetCALC Projects</div>
+                    <div class="panel-body">
+                    <ul class="nav nav-list" id="leftMenu">
+                        <li class="active"><a href="#activeProjectsView" data-toggle="tab">Active Projects</a></li>
+                        <!-- ko foreach: menuItems -->
+                        <li><a data-toggle="tab" data-bind="visible: !hide, attr: { id: id + 'MenuItem', href: id + 'View' }, text: name"></a></li>
+                        <!-- /ko -->
+                    </ul>
+                        </div>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentLeft" runat="server"></asp:ContentPlaceHolder>
+
+            </div>
+
+            <!-- righthand panel -->
+            <div id="rightPanel" class="col-lg-9 test-pad-top-10">
+
+                <asp:ContentPlaceHolder ID="ContentRight" runat="server"></asp:ContentPlaceHolder>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</asp:Content>
+
+<asp:Content ID="JavascriptContent" ContentPlaceHolderID="Javascript" runat="server">
+    
+    <script src="../Scripts/assetcalc.pm.project.js"></script>
+    <script src="../Scripts/assetcalc.pm.task.js"></script>
+
+    <script src="../Scripts/chart.ko.test.js"></script>
+    
+    <!-- ProjectManager.master javascript -->
+    <script>
+        var pageModel = function () {
+            model = this;
+
+            model.menuItems = [
+                    { name: 'Overview', id: '#overview', hide: false },
+                    { name: 'Reports', id: '#reports', hide: false },
+                    { name: 'Photos & Documents', id: '#photosAndDocuments', hide: false },
+                    //{ name: 'Search', id: '#search', hide: false },
+                    { name: 'Activity', id: '#activity', hide: false },
+                    { name: 'Markups', id: '#markups', hide: false },
+                    { name: 'Archive', id: '#archive', hide: false },
+            ];
+
+            model.panelStatus = 'open';
+
+            model.togglePanel = function () {
+                console.log('togglePanel: ' + model.panelStatus)
+                if (model.panelStatus == 'closed')
+                    model.openPanel();
+                else
+                    model.collapsePanel();
+            };
+
+            model.collapsePanel = function () {
+                //console.log('collapsePanel: ' + panelStatus);
+                $('#leftPanel').fadeOut(function () {
+                    // on fadeOut complete
+                    $('#collapseButton').addClass('icon-chevron-right');
+                    $('#collapseButton').removeClass('icon-chevron-left');
+                    $('#rightPanel').addClass('span11');
+                    $('#rightPanel').removeClass('span9');
+                    model.panelStatus = 'closed'
+                });
+            };
+
+            model.openPanel = function () {
+                $('#collapseButton').addClass('icon-chevron-left');
+                $('#collapseButton').removeClass('icon-chevron-right');
+                $('#rightPanel').removeClass('span11');
+                $('#rightPanel').addClass('span9');
+                $('#leftPanel').fadeIn();
+                model.panelStatus = 'open'
+            };
+
+            model.afterTemplateBinding = function (item) {
+
+                console.log('afterRender - reapply stupidtable bindings, run Holder');
+
+                Holder.run();
+
+                $(".table-sortable").stupidtable();
+                $("th[data-sort]").each(function (index, item) {
+
+                    $(item).find("i").remove();
+
+                    $(item)
+                        .append($("<i></i>")
+                            .addClass('icon-resize-vertical')
+                            .addClass('margin-left-20')
+                            .addClass("muted-more"));
+                });
+            };
+
+            return {
+                togglePanel: model.togglePanel,
+                menuItems: model.menuItems,
+                afterTemplateBinding: model.afterTemplateBinding
+            };
+        };
+
+    </script>
+    <!-- END ProjectManager.master javascript -->
+
+    <asp:ContentPlaceHolder ID="Javascript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,65 @@
+﻿
+
+/* add margin (for fixed navbar) */
+.container {
+    margin-top: 65px;
+}
+
+/* bar */
+.navbar-inverse {
+    background-color: #006666;
+}
+.navbar-default {
+    border-color: white;
+}
+
+/* menu  items */
+.navbar-inverse .navbar-nav > li > a {
+    color: #ddd;
+}
+.navbar-inverse .navbar-nav > li.active > a,
+    .navbar-inverse .navbar-nav > li.active > a:hover
+ {
+    background-color: white;
+    color: #006666;
+}
+
+
+.navbar-default .navbar-brand {
+    font-family: 'Anaheim', sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 22px;
+}
+
+/* correct colors of navbar (old)
+
+.navbar .brand
+{
+    font-family: 'Anaheim', sans-serif;
+    font-size: 28px; 
+    color: white;
+    margin: 0 20px; 
+}
+.navbar-inverse .navbar-inner
+{
+    background-color: #066;
+}
+.navbar-inverse .nav > .active > a > [class^="icon-"]
+{
+    background-image: url("../Content/images/glyphicons-halflings.png");
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover
+{
+    background-color: #006666;
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+    color: #ffffff;
+    background-color: #399;
+}
+
+.nav > li > a {
+display: block;
+font-size: 16px;
+}
+    */

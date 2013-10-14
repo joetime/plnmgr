@@ -1,0 +1,90 @@
+﻿
+/* table headers */
+
+th
+{
+    border-bottom: 1px solid #006666;
+}
+
+    /* align */
+
+    td.td-right, th.th-right
+    {
+        text-align: right;
+    }
+
+
+
+    td.td-center, th.th-center
+    {
+        text-align: center;
+    }
+
+
+    th.th-muted
+    {
+        font-weight: normal;
+    }
+
+td.td-focus
+{
+    font-size: 18px;
+    color: #066;
+}
+
+    td.td-focus, td.td-focus a
+    {
+        color: #73301D;
+    }
+
+
+
+/* clickable and ROW HOVER */
+
+tr .row-hover-mute
+{
+    opacity: .20;
+}
+
+tr:hover .row-hover-mute
+{
+    opacity: .6;
+}
+
+tr td:hover .row-hover-mute
+{
+    opacity: 1;
+}
+
+tr.tr-clickable
+{
+    cursor: pointer;
+}
+
+    tr.tr-clickable:hover a.tr-clickable-target
+    {
+        text-decoration: underline;
+    }
+
+
+table tr:first-of-type td
+{
+    padding-top: 10px;
+}
+
+
+th[data-sort]:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+    th[data-sort]:hover i.muted-more
+    {
+        opacity: .6;
+    }
+
+.tr-adding
+{
+    background-color: green;
+}

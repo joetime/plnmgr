@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="ACWeb.Menu" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Css" runat="server">
+    <asp:ContentPlaceHolder ID="Css" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <div class="navbar navbar-static-top navbar-inverse hidden-print">
+        <div class="navbar-inner">
+            <a class="brand" href="#">AssetCALC 4</a>
+            <ul class="nav">
+                <li class=""><a href="#"><i class="icon-home icon-white"></i></a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Cost Library</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Replacement Reserve</a></li>
+                        <li><a href="#">Elements</a></li>
+                        <li><a href="#">Executive Summary</a></li>
+                        <li><a href="#">FCI</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="#">Projects</a></li>
+                    
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a></li>
+
+                <asp:ContentPlaceHolder ID="MenuLeft" runat="server"></asp:ContentPlaceHolder>
+            </ul>
+            <div class="navbar-inner pull-right">
+                <ul class="nav">
+                    <li><a href="#"><i class="icon-search icon-white"></i></a></li>
+                    <li><a href="#"><i class="icon-user icon-white"></i></a></li>
+                    <li><a href="#"><i class="icon-wrench icon-white"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+
+</asp:Content>
+<asp:Content ContentPlaceHolderID="Javascript" runat="server">
+    <!-- Menu.master javascript -->
+    <script></script>
+    <!-- END Menu.master javascript -->
+    <asp:ContentPlaceHolder ID="Javascript" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

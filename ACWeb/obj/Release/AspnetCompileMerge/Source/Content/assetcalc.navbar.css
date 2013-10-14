@@ -1,0 +1,31 @@
+﻿
+/* correct colors of navbar */
+
+.navbar .brand
+{
+    font-family: 'Anaheim', sans-serif;
+    font-size: 28px; 
+    color: white;
+    margin: 0 20px; 
+}
+.navbar-inverse .navbar-inner
+{
+    background-color: #066;
+}
+.navbar-inverse .nav > .active > a > [class^="icon-"]
+{
+    background-image: url("../Content/images/glyphicons-halflings.png");
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover
+{
+    background-color: #006666;
+}
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+    color: #ffffff;
+    background-color: #399;
+}
+
+.nav > li > a {
+display: block;
+font-size: 16px;
+}

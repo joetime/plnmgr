@@ -1,0 +1,11 @@
+﻿
+h1, h2, h3 {
+    font-family: 'Anaheim', sans-serif;
+}
+
+/**[rel~="add"] {
+    color: green;
+    border-color: green;
+}
+
+.btn > .glyphicon { font-size: 1.2em; }*/

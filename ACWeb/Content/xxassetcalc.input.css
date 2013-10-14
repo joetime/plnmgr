@@ -1,0 +1,24 @@
+﻿textarea.input-quiet /*, select.input-quiet, input.input-quiet*/
+{
+    border: 1px dotted #ddd;
+    -webkit-box-shadow: none; /*inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    -moz-box-shadow: none; /*inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    box-shadow: none; /*inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    -webkit-transition: none; /*border linear 0.2s, box-shadow linear 0.2s;*/
+    -moz-transition: none; /*border linear 0.2s, box-shadow linear 0.2s;*/
+    -o-transition: none; /*border linear 0.2s, box-shadow linear 0.2s;*/
+    transition: none; /*border linear 0.2s, box-shadow linear 0.2s;*/
+}
+
+    textarea.input-quiet:hover /*, select.input-quiet:hover, input.input-quiet:hover*/
+    {
+        border: 1px solid #888;
+    }
+
+
+input.h3
+{
+    /*font-weight: bold;*/
+    font-size: 24.5px;
+    /*font-family: 'Anaheim', sans-serif;*/
+}

@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ACWeb.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AssetCALC 4</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css' />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="Content/chosen.css" rel="stylesheet" />
+    <link href="Content/chosen-flatten.css" rel="stylesheet" />
+    <link href="Content/toastr.css" rel="stylesheet" />
+    
+
+    <link href="Content/assetcalc.css" rel="stylesheet" />
+    <link href="Content/assetcalc.chzn.css" rel="stylesheet" />
+    <!--<link href="Content/assetcalc.input.css" rel="stylesheet" />-->
+    <link href="Content/assetcalc.navbar.css" rel="stylesheet" />
+    <!--<link href="Content/assetcalc.nav.css" rel="stylesheet" />
+    <link href="Content/assetcalc.print.css" rel="stylesheet" />
+    <link href="Content/assetcalc.table.css" rel="stylesheet" />-->
+
+    <asp:ContentPlaceHolder ID="Css" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="aspnetMainForm" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    <script src="../Scripts/libs/jquery-2.0.2.min.js"></script>
+    <script src="../Scripts/libs/underscore.js"></script>
+    <script src="../Scripts/libs/jquery.cookie.js"></script>
+    <script src="../Scripts/libs/knockout-2.2.1.js"></script>
+    <script src="../Scripts/libs/toastr.min.js"></script>
+    <script src="../Scripts/libs/bootstrap.min.js"></script>
+    <script src="../Scripts/libs/chosen.jquery.min.js"></script>
+    <script src="../Scripts/libs/holder.js"></script>
+    <script src="../Scripts/libs/stupidtable.js"></script>
+    <script src="../Scripts/libs/chart.js"></script>
+    
+
+    <script src="../Scripts/chart.ko.js"></script>
+    <script src="../Scripts/assetcalc.js"></script>
+    <script src="../Scripts/assetcalc.chart.js"></script>
+
+    <asp:ContentPlaceHolder ID="Javascript" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿ul.nav.nav-list li
+{
+    margin-bottom: 10px;
+}
+
+    ul.nav.nav-list li.active a
+    {
+        color: white;
+        background-color: #528CCC;
+    }
+
+    ul.nav.nav-list li a
+    {
+        color: #0F5199;
+    }

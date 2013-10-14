@@ -1,0 +1,5 @@
+C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\bin\Debug\JoeLib.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\bin\Debug\JoeLib.pdb
+C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\obj\Debug\JoeLib.csprojResolveAssemblyReference.cache
+C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\obj\Debug\JoeLib.dll
+C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\obj\Debug\JoeLib.pdb

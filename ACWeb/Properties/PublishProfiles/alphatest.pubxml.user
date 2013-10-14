@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAk9bOO9G4CUuZ5jUUA0ZyFwAAAAACAAAAAAAQZgAAAAEAACAAAADE04Qj0mwj7iXgXaoYfaQo/D/sHMm3VwgGQmFx+lMqlgAAAAAOgAAAAAIAACAAAADwlFIhxbnDbJqXGi8S9SIJ2jXtKjUq287acWGe7fUjwCAAAAARGHFPL69Kvb4Bxubj275ir2+Fg52qSL0xU/vUPuqh8kAAAABYybqrx77OYRrPG6MVvmhrrKqBoyGN9uxaIIPWL07I2NLW8rCcEnMgYfPPSvKmjILgyYTxSERF3Gk+JabaeJ8S</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ACTest/Chartjs_Test.aspx">
+      <publishTime>07/19/2013 12:06:46</publishTime>
+    </File>
+    <File Include="ACTest/Flotr2_Test.aspx">
+      <publishTime>07/18/2013 14:51:51</publishTime>
+    </File>
+    <File Include="ACTest/Menu_Master_Test.aspx">
+      <publishTime>07/11/2013 09:14:12</publishTime>
+    </File>
+    <File Include="ACTest/Site_Master_Test.aspx">
+      <publishTime>07/10/2013 13:37:58</publishTime>
+    </File>
+    <File Include="bin/ACData.dll">
+      <publishTime>07/16/2013 10:35:10</publishTime>
+    </File>
+    <File Include="bin/ACLib.dll">
+      <publishTime>07/16/2013 10:35:11</publishTime>
+    </File>
+    <File Include="bin/ACWeb.dll">
+      <publishTime>07/19/2013 14:09:00</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/10/2013 11:04:55</publishTime>
+    </File>
+    <File Include="bin/JoeLib.dll">
+      <publishTime>07/16/2013 10:35:10</publishTime>
+    </File>
+    <File Include="Content/assetcalc.chzn.css">
+      <publishTime>07/16/2013 11:01:42</publishTime>
+    </File>
+    <File Include="Content/assetcalc.css">
+      <publishTime>07/15/2013 13:09:49</publishTime>
+    </File>
+    <File Include="Content/assetcalc.input.css">
+      <publishTime>07/16/2013 11:04:51</publishTime>
+    </File>
+    <File Include="Content/assetcalc.nav.css">
+      <publishTime>07/16/2013 10:57:14</publishTime>
+    </File>
+    <File Include="Content/assetcalc.navbar.css">
+      <publishTime>07/10/2013 13:39:07</publishTime>
+    </File>
+    <File Include="Content/assetcalc.pm.css">
+      <publishTime>07/16/2013 11:43:12</publishTime>
+    </File>
+    <File Include="Content/assetcalc.print.css">
+      <publishTime>07/10/2013 11:28:06</publishTime>
+    </File>
+    <File Include="Content/assetcalc.table.css">
+      <publishTime>07/16/2013 11:00:59</publishTime>
+    </File>
+    <File Include="Content/assetcalc.test.css">
+      <publishTime>07/10/2013 13:21:50</publishTime>
+    </File>
+    <File Include="Content/bootstrap-chosen.less">
+      <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.css">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.min.css">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Content/chosen-flatten.css">
+      <publishTime>07/17/2013 13:54:41</publishTime>
+    </File>
+    <File Include="Content/chosen-sprite.png">
+      <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="Content/chosen.css">
+      <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="Content/flatstrap.css">
+      <publishTime>07/10/2013 12:36:26</publishTime>
+    </File>
+    <File Include="Content/images/click-to-add-photo.png">
+      <publishTime>07/15/2013 13:26:43</publishTime>
+    </File>
+    <File Include="Content/images/glyphicons-halflings-white.png">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Content/images/glyphicons-halflings.png">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Content/toastr.css">
+      <publishTime>07/10/2013 11:18:11</publishTime>
+    </File>
+    <File Include="Content/toastr.less">
+      <publishTime>07/10/2013 11:18:11</publishTime>
+    </File>
+    <File Include="Content/toastr.min.css">
+      <publishTime>07/10/2013 11:18:11</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/19/2013 11:03:51</publishTime>
+    </File>
+    <File Include="Menu.master">
+      <publishTime>07/11/2013 12:52:49</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>07/19/2013 14:11:34</publishTime>
+    </File>
+    <File Include="ProjectManager/Home.aspx">
+      <publishTime>07/19/2013 14:05:59</publishTime>
+    </File>
+    <File Include="ProjectManager/ProjectManager.master">
+      <publishTime>07/19/2013 12:22:43</publishTime>
+    </File>
+    <File Include="ProjectManager/Templates.ProjectManager.master">
+      <publishTime>07/16/2013 11:29:42</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.chart.js">
+      <publishTime>07/18/2013 14:33:25</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.js">
+      <publishTime>07/15/2013 11:40:40</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.pm.project.js">
+      <publishTime>07/15/2013 16:58:23</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.pm.task.js">
+      <publishTime>07/15/2013 13:42:41</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.test.js">
+      <publishTime>07/19/2013 11:19:15</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.test.pm.js">
+      <publishTime>07/19/2013 12:09:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/10/2013 11:15:32</publishTime>
+    </File>
+    <File Include="Scripts/chart.js">
+      <publishTime>07/18/2013 12:01:07</publishTime>
+    </File>
+    <File Include="Scripts/chart.ko.js">
+      <publishTime>07/19/2013 14:02:34</publishTime>
+    </File>
+    <File Include="Scripts/chart.ko.test.js">
+      <publishTime>07/19/2013 12:23:49</publishTime>
+    </File>
+    <File Include="Scripts/chosen.jquery.js">
+      <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="Scripts/chosen.jquery.min.js">
+      <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="Scripts/flotr2.js">
+      <publishTime>07/18/2013 14:51:36</publishTime>
+    </File>
+    <File Include="Scripts/holder.js">
+      <publishTime>07/11/2013 11:29:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.0.2.js">
+      <publishTime>07/10/2013 11:13:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.0.2.min.js">
+      <publishTime>07/10/2013 11:13:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.0.2.min.map">
+      <publishTime>07/10/2013 11:13:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery.cookie.js">
+      <publishTime>07/10/2013 11:14:47</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.1.debug.js">
+      <publishTime>07/10/2013 11:14:00</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.1.js">
+      <publishTime>07/10/2013 11:14:00</publishTime>
+    </File>
+    <File Include="Scripts/stupidtable.js">
+      <publishTime>07/15/2013 12:12:08</publishTime>
+    </File>
+    <File Include="Scripts/stupidtable.min.js">
+      <publishTime>07/15/2013 12:12:08</publishTime>
+    </File>
+    <File Include="Scripts/test.pm.js">
+      <publishTime>07/16/2013 05:54:31</publishTime>
+    </File>
+    <File Include="Scripts/toastr.js">
+      <publishTime>07/10/2013 11:18:11</publishTime>
+    </File>
+    <File Include="Scripts/toastr.min.js">
+      <publishTime>07/10/2013 11:18:11</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>07/19/2013 11:58:26</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/19/2013 14:11:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

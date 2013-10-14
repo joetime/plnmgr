@@ -1,0 +1,67 @@
+﻿
+#leftPanel
+{
+    margin-top: 20px;
+}
+
+
+#projectManagerContainer
+{
+    margin-top: 20px;
+}
+
+#projectContent div.tab-pane
+{
+    min-height: 550px;
+}
+
+
+dt
+{
+    font-style: italic;
+    margin: 20px 0px 5px;
+    font-weight: bold;
+}
+
+#collapseButton
+{
+    cursor: pointer;
+    position: fixed;
+    left: 4px;
+    top: 53px;
+    opacity: .4;
+}
+
+    #collapseButton:hover
+    {
+        opacity: 1;
+    }
+
+        #collapseButton:hover:after
+        {
+            content: " menu ";
+            padding-left: 15px;
+        }
+
+dd
+{
+    margin-bottom: 10px;
+}
+
+.activity-user, .activity-project
+{
+    color: #528CCC;
+}
+
+#rightPanel .nav-tabs li
+{
+    padding-right: 15px;
+    padding-left: 15px;
+    /*background-color: #fdfdfd;*/
+}
+
+.project-description
+{
+    font-size: 18px;
+    margin: 35px 0px;
+}
