@@ -1,7 +1,46 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true" CodeBehind="PlanManager.master.cs" Inherits="ACWeb.PlanManager.PlanManager" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Css" runat="server">
+    <!-- gridform overrides -->
+    <style>
+        /*RESET for BOOTSTRAP*/
+        .grid-form legend {
+            margin-bottom: 0px;
+        }
 
+        /*MY STYLE*/
+        .grid-form fieldset legend {
+            border-bottom: none;
+        }
+        .grid-form [data-row-span] [data-field-span] label:first-child {
+            color: #999;
+        }
+         
+        .grid-form textarea { 
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        .grid-form input[type="date"] {
+            font-size: 18px;
+        }
+        .grid-form [data-row-span]  {
+            border-bottom: 1px dotted #ddd;
+        }
+        .grid-form [data-row-span] [data-field-span] {
+            border-right: 1px dotted #ddd;
+        }
+        .grid-form select {
+            -webkit-appearance: none;
+            border: none /*1px dotted #ccc*/;
+        }
+        .grid-form input[type="date"], .grid-form input[type="number"] {
+            -webkit-appearance: none;
+            border: none;
+            padding-left: 3px;
+            width: 100%;
+        }
+
+    </style>
     <asp:ContentPlaceHolder ID="CssPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MenuLeft" runat="server">
@@ -30,7 +69,11 @@
     <script id="planDetailsForm" type="text/template">
 
         <h2 data-bind="text: name, click: $root.deselectProject"></h2>
+
+        <!-- buttons 
+            -->
         <div class="pull-right">
+
             <div class="btn-group" data-bind="visible: !$root.selectedProject()">
                 <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
                     Plan Actions <span class="caret"></span>
@@ -42,24 +85,37 @@
                     <li><a href="#">Delete Plan</a></li>
                 </ul>
             </div>
-            <button class="btn btn-sm btn-primary puxll-right" 
-                data-bind="visible: uiNew() || uiDirty(), click: $root.savePlan">Save</button>
+            <button class="btn btn-sm btn-primary"
+                data-bind="visible: uiNew() || uiDirty(), click: $root.savePlan">
+                Save</button>
         </div>
+
+        <!-- when a project is selected,
+            tabs appear here 
+            -->
         <div>
             <!-- ko template: { if: $root.selectedProject, name: 'projectDetailsForm', data: $root.selectedProject } -->
             <!-- /ko -->
         </div>
 
+        <!-- plan tabs 
+            -->
         <div data-bind="visible: !($root.selectedProject())">
 
+            <!-- tabs 
+                -->
             <ul id="planTabs" class="nav nav-tabs">
-                <li class="active"><a href="#planDashboard" data-toggle="tab">Dashboard</a></li>
+                <li>
+                    <a href="#planDashboard" data-toggle="tab">Dashboard</a></li>
                 <li><a href="#planProjects" data-toggle="tab">Projects</a></li>
-                <li><a id="planDetailsTabTrigger" href="#planDetails" data-toggle="tab">Details</a></li>
+                <li class="active"><a id="planDetailsTabTrigger" href="#planDetails" data-toggle="tab">Details</a></li>
             </ul>
+
+            <!-- content 
+                -->
             <div class="tab-content">
 
-                <div class="tab-pane active" id="planDashboard">
+                <div class="tab-pane" id="planDashboard">
 
                     <h3 data-bind="text: 'Total Estimate: ' + numeral(planTotal()).format('$ 0,0')"></h3>
                     <hr />
@@ -78,43 +134,43 @@
                     </div>
                     <div data-bind="foreach: breakouts">
 
-                        <h4><span data-bind="text: name"></span></h4> 
-                        
+                        <h4><span data-bind="text: name"></span></h4>
+
                         <div class="progress progress-fat" data-bind="foreach: vals">
-                          <div class="progress-bar progress-bar-success" 
-                              data-bind="visible: parseInt(value) > 10, attr: {
-style:
-    'width:' + numeral(value / $parents[1].planTotal()).format('00%') + '; ' +
-    'background-color:' + color
+                            <div class="progress-bar progress-bar-success"
+                                data-bind="visible: parseInt(value) > 10, attr: {
+    style:
+        'width:' + numeral(value / $parents[1].planTotal()).format('00%') + '; ' +
+        'background-color:' + color
 }">
-                            <span class="label label-default" 
-                                data-bind="text: name + ' ' + numeral(value).format('$0.0a'), attr: { style: 'background-color:' + color }"></span>
-                          </div>
+                                <span class="label label-default"
+                                    data-bind="text: name + ' ' + numeral(value).format('$0.0a'), attr: { style: 'background-color:' + color }"></span>
+                            </div>
                         </div>
 
                     </div>
 
 
 
-            <!-- table with some dollar figures -->
-            <table class="table table-bordered table-hover">
-                <tr>
-                    <td>Plan Total Estimate</td>
-                    <td class="text-right" data-bind="text: numeral(planTotal()).format('$ 0,0')"></td>
-                </tr>
-                <tr>
-                    <td>Base Subtotal</td>
-                    <td class="text-right" data-bind="text: numeral(planBaseSubtotal()).format('0,0')"></td>
-                    <td class="text-right" data-bind="text: numeral(planBaseSubtotal() / planTotal()).format('00%')"></td>
-                </tr>
-                <tr>
-                    <td>Markup Subtotal</td>
-                    <td class="text-right" data-bind="text: numeral(planMarkupsTotal()).format('0,0')"></td>
-                    <td class="text-right" data-bind="text: numeral(planMarkupsTotal() / planTotal()).format('00%')"></td>
-                </tr>
-            </table>
-            
-            </div>
+                    <!-- table with some dollar figures -->
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <td>Plan Total Estimate</td>
+                            <td class="text-right" data-bind="text: numeral(planTotal()).format('$ 0,0')"></td>
+                        </tr>
+                        <tr>
+                            <td>Base Subtotal</td>
+                            <td class="text-right" data-bind="text: numeral(planBaseSubtotal()).format('0,0')"></td>
+                            <td class="text-right" data-bind="text: numeral(planBaseSubtotal() / planTotal()).format('00%')"></td>
+                        </tr>
+                        <tr>
+                            <td>Markup Subtotal</td>
+                            <td class="text-right" data-bind="text: numeral(planMarkupsTotal()).format('0,0')"></td>
+                            <td class="text-right" data-bind="text: numeral(planMarkupsTotal() / planTotal()).format('00%')"></td>
+                        </tr>
+                    </table>
+
+                </div>
 
                 <div class="tab-pane" id="planProjects">
                     <div class="row">
@@ -122,19 +178,19 @@ style:
                             <h3 data-bind="text: 'Plan Total Estimate: $ ' + numeral(planTotal()).format('0,0')"></h3>
                         </div>
                         <div class="well-sm pull-right">
-                           
+
                             <div class="btn-group">
-                              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                                Add Project <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu" role="menu">
-                                <li><a data-bind="click: $root.addProject"
-                                    href="#">Empty Project</a></li>
-                                <li><a data-bind="click: $root.openSearch" href="#searchModal">AssetCALC Cost</a></li>
-                                
-                              </ul>
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                    Add Project <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a data-bind="click: $root.addProject"
+                                        href="#">Empty Project</a></li>
+                                    <li><a data-bind="click: $root.openSearch" href="#searchModal">AssetCALC Cost</a></li>
+
+                                </ul>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -174,93 +230,181 @@ style:
 
                 </div>
 
-            <div class="tab-pane" id="planDetails">
-                <form class="form-horizontal" role="form">
-                    
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Plan Name</label>
-                        <div class="col-md-6">
-                            <input id="planNameInput" type="text" class="form-control input-lg" placeholder="Plan Name"
-                                data-bind="value: name">
+                <div id="planDetails" class="tab-pane active">
+
+                    <form class="grid-form">
+                        <fieldset>
+
+                            <legend></legend>
+                            
+                            <!-- ID, Project Name -->
+                            <div data-row-span="5">
+                                <div data-field-span="1">
+                                    <label>Identifier</label>
+                                    <input type="text" data-bind="value: identifier">
+                                </div>
+                                <div data-field-span="4">
+                                    <label>Plan Name</label>
+                                    <input type="text" class="fiexld-em" data-bind="value: name">
+                                </div>
+                            </div>
+
+                            <!-- Summary -->
+                            <div data-row-span="1">
+                                <div data-field-span="1">
+                                    <label>Summary</label>
+                                    <input type="text" data-bind="value: summary" />
+                                </div>
+                            </div>
+
+                            <!-- Fiscal Year, Start Date, End Date -->
+                            <div data-row-span="5">
+                                <div data-field-span="1">
+                                    <label>Fiscal Year</label>
+                                    <input type="text" data-bind="value: fiscalYear" />
+                                </div>
+                                <div data-field-span="2">
+                                    <label>Start Date</label>
+                                    <input type="date" data-bind="value: startDate" />
+                                </div>
+                                <div data-field-span="2">
+                                    <label>End Date</label>
+                                    <input type="date" data-bind="value: endDate" />
+                                </div>
+                            </div>
+
+                            <!-- Status, Contact -->
+                            <div data-row-span="5">
+                                <div data-field-span="2">
+                                    <label>Status</label>
+                                    <select class=""
+                                    data-bind="value: status, options: statusArray">
+                                        <option value="">- Select - </option>
+                                </select>
+                                </div>
+                                <div data-field-span="3">
+                                    <label>Contact</label>
+                                    <input type="text" data-bind="value: contact" />
+                                </div>
+                            </div>
+
+                            
+                            <!-- Details -->
+                            <div data-row-span="1">
+                                <div data-field-span="1">
+                                    <label>Details</label>
+                                    <textarea data-bind="value: description" />
+                                </div>
+                            </div>
+
+
+                            <!-- Notes -->
+                            <div data-row-span="1">
+                                <div data-field-span="1">
+                                    <label>Notes</label>
+                                    <textarea data-bind="value: notes" />
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div data-row-span="1">
+                                <div data-field-span="1">
+                                    <label>Exceptions</label>
+                                    <textarea data-bind="value: exceptions" />
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+                    <!--
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Plan Name</label>
+                            <div class="col-md-6">
+                                <input id="planNameInput" type="text" class="form-control input-lg" placeholder="Plan Name"
+                                    data-bind="value: name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Identifier</label>
-                        <div class="col-md-3">
-                            <input type="text" class="form-control input-sm" placeholder="Identifier"
-                                data-bind="value: identifier">
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Identifier</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control input-sm" placeholder="Identifier"
+                                    data-bind="value: identifier">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Summary</label>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Summary"
-                                data-bind="value: summary">
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Summary</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" placeholder="Summary"
+                                    data-bind="value: summary">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Description</label>
-                        <div class="col-md-7">
-                            <textarea class="form-control input-sm" placeholder="Description"
-                                data-bind="value: description"></textarea>
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Description</label>
+                            <div class="col-md-7">
+                                <textarea class="form-control input-sm" placeholder="Description"
+                                    data-bind="value: description"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <hr />
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Time Frame</label>
-                        <div class="col-md-3">
-                            <input type="date" data-bind="value: startDate" class="form-control" />
+                        <hr />
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Time Frame</label>
+                            <div class="col-md-3">
+                                <input type="date" data-bind="value: startDate" class="form-control" />
+                            </div>
+                            <div class="col-md-1">-</div>
+                            <div class="col-md-3 text-left">
+                                <input type="date" data-bind="value: endDate" class="form-control" />
+                            </div>
                         </div>
-                        <div class="col-md-1">-</div>
-                        <div class="col-md-3 text-left">
-                            <input type="date" data-bind="value: endDate" class="form-control" />
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Fiscal Year</label>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control input-sm" placeholder="ex 2014"
+                                    data-bind="value: fiscalYear">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Fiscal Year</label>
-                        <div class="col-md-3">
-                            <input type="number" class="form-control input-sm" placeholder="ex 2014"
-                                data-bind="value: fiscalYear">
+                        <hr />
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Contact</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control input-sm" placeholder="ex 2014"
+                                    data-bind="value: contact">
+                            </div>
                         </div>
-                    </div>
-                    <hr />
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Contact</label>
-                        <div class="col-md-3">
-                            <input type="text" class="form-control input-sm" placeholder="ex 2014"
-                                data-bind="value: contact">
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Priority</label>
+                            <div class="col-md-3">
+                                <select class="form-control"
+                                    data-bind="value: priority">
+                                    <option value="">- Select - </option>
+                                    <option>High</option>
+                                    <option>Medium</option>
+                                    <option>Low</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Priority</label>
-                        <div class="col-md-3">
-                            <select class="form-control"
-                                data-bind="value: priority">
-                                <option value=""> - Select - </option>
-                                <option>High</option>
-                                <option>Medium</option>
-                                <option>Low</option>
-                            </select>
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Notes</label>
+                            <div class="col-md-7">
+                                <textarea class="form-control input-sm" placeholder="Notes"
+                                    data-bind="value: notes"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Notes</label>
-                        <div class="col-md-7">
-                            <textarea class="form-control input-sm" placeholder="Notes"
-                                data-bind="value: notes"></textarea>
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">Exceptions</label>
+                            <div class="col-md-7">
+                                <textarea class="form-control input-sm" placeholder="Exceptions"
+                                    data-bind="value: exceptions"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-md-2 control-label">Exceptions</label>
-                        <div class="col-md-7">
-                            <textarea class="form-control input-sm" placeholder="Exceptions"
-                                data-bind="value: exceptions"></textarea>
-                        </div>
-                    </div>
-                 
-                </form>
+
+                    </form>
+                    -->
+                </div>
             </div>
-        </div>
 
         </div>
 

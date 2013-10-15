@@ -65,6 +65,7 @@
     <Content Include="ACTest\Menu_Master_Test.aspx" />
     <Content Include="ACTest\Site_Master_Test.aspx" />
     <Content Include="Content\assetcalc.css" />
+    <Content Include="Content\gridforms.css" />
     <Content Include="Content\xxassetcalc.css" />
     <Content Include="Content\xxassetcalc.input.css" />
     <Content Include="Content\xxassetcalc.nav.css" />

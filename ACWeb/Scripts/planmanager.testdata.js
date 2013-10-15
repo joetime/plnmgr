@@ -289,7 +289,18 @@ var dummyProjectSet2 = [
 
 var dummyPlanSet = [
     new Plan({
-        name: 'Fiscal Year 2014 Plan', identifier: 'FY14',
+        name: 'Fiscal Year 2014 Plan',
+        identifier: 'FY14',
+        summary: 'A modest proposal for the 2014 fiscal year.',
+        description: 'Capital improvements to libraries, fire stations and courthouses. ' +
+            'More repairs to public walkways and infrastructure. Some other details here other details here other details here other details here other details here. Some other details here other details here other details here other details here other details here.' +
+            'More repairs to public walkways and infrastructure. Some other details here other details here other details here other details here other details here. Some other details here other details here other details here other details here other details here.',
+        fiscalYear: 2014,
+        startDate: '2013-07-01',
+        endDate: '2014-06-30',
+        contact: 'Joe Scala',
+        notes: 'More repairs to public walkways and infrastructure. Some other details here other details here other details here other details here other details here.',
+        exceptions: 'Some other details here other details here other details here other details here other details here.',
         projects: dummyProjectSet,
     }),
 	new Plan({ name: 'Fiscal Year 2015 Plan' }),

@@ -122,6 +122,7 @@
 
     <script>
         $(document).ready(function () {
+
             ko.applyBindings(myPageModel);
             myPageModel.selectFirstPlan();
         });

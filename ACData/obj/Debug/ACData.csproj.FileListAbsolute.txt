@@ -5,3 +5,10 @@ C:\Users\jscala\GitHub\AssetCALC 4.x\ACData\bin\Debug\JoeLib.pdb
 C:\Users\jscala\GitHub\AssetCALC 4.x\ACData\obj\Debug\ACData.csprojResolveAssemblyReference.cache
 C:\Users\jscala\GitHub\AssetCALC 4.x\ACData\obj\Debug\ACData.dll
 C:\Users\jscala\GitHub\AssetCALC 4.x\ACData\obj\Debug\ACData.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\bin\Debug\ACData.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\bin\Debug\ACData.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\bin\Debug\JoeLib.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\bin\Debug\JoeLib.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\obj\Debug\ACData.csprojResolveAssemblyReference.cache
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\obj\Debug\ACData.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACData\obj\Debug\ACData.pdb

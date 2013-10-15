@@ -1,10 +1,12 @@
 ﻿
 var descriptionSet = function(vars) {
-	var set = this;
-	set.summary = ko.observable('');
-	set.description = ko.observable('');
-	set.notes = ko.observable('');
-	set.exceptions = ko.observable('');
+    var set = this;
+    if (!vars) vars = {};
+
+	set.summary = ko.observable(vars.summary);
+	set.description = ko.observable(vars.description);
+	set.notes = ko.observable(vars.notes);
+	set.exceptions = ko.observable(vars.exceptions);
 };
 
 var timeSpanSet = function (vars) {
@@ -56,7 +58,7 @@ var Plan = function (vars) {
     if (!vars.ui) vars.ui = {};
     $.extend(plan, new uiSet(vars.ui));
 
-    $.extend(plan, new descriptionSet());
+    $.extend(plan, new descriptionSet(vars));
     $.extend(plan, new timeSpanSet(vars));
     $.extend(plan, new metaSet());
 
@@ -113,7 +115,7 @@ var BreakoutCalculator = function (projects) {
 
     bc.name = ko.observable('test');
 
-    console.log(projects);
+    //console.log(projects);
 
     // 1 run through projects, and sort the breakouts into templates based on name
     // 2 create a dictionary-like structure, where name is the key
@@ -131,10 +133,10 @@ var BreakoutCalculator = function (projects) {
             i++;
         }
     });
-    console.log('afterstep3:');
-    console.log();
+    //console.log('afterstep3:');
+    //console.log();
     var cheater = [arr['Scope of Work'], arr['Funding Source']];
-    console.log(cheater);
+    //console.log(cheater);
     // 4
     var stuff = [];
     // cheater = [ { name: xxx, vals: xxx[] }, ... ]
@@ -165,7 +167,7 @@ var BreakoutCalculator = function (projects) {
             FINAL.push({ name: item.name, vals: pushme });
         }
     });
-    console.log(FINAL);
+    //console.log(FINAL);
     return ko.observable(FINAL);
     //console.log(vals);
 }

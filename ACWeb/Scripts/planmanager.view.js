@@ -57,12 +57,20 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
         myPageModel.selectedPlan(null);
     },
     selectPlan: function (plan) {
+
+        console.log(plan.fiscalYear());
+        console.log(plan.summary());
+
         myPageModel.deselectPlan();
 
         plan.uiSelected(true);
         myPageModel.selectedPlan(plan)
 
         $(".table-sort").stupidtable(); console.log('stupidtable');
+        //$("textarea").load(function () {
+            $("textarea").height($("textarea")[0].scrollHeight);
+            console.log('resize textarea');
+        //});
     },
     selectFirstPlan: function () {
         myPageModel.selectPlan(myPageModel.allPlans()[0]);
