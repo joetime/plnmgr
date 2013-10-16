@@ -63,26 +63,18 @@
     <Content Include="ACTest\Chartjs_Test.aspx" />
     <Content Include="ACTest\HistoryTest.aspx" />
     <Content Include="ACTest\Menu_Master_Test.aspx" />
+    <Content Include="ACTest\ObservationForm_Test.aspx" />
     <Content Include="ACTest\Site_Master_Test.aspx" />
     <Content Include="Content\assetcalc.css" />
+    <Content Include="Content\assetcalc.gridforms.css" />
     <Content Include="Content\gridforms.css" />
-    <Content Include="Content\xxassetcalc.css" />
-    <Content Include="Content\xxassetcalc.input.css" />
-    <Content Include="Content\xxassetcalc.nav.css" />
     <Content Include="Content\assetcalc.test.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\xxbootstrap-responsive.css" />
-    <Content Include="Content\xxbootstrap-responsive.min.css" />
-    <Content Include="Content\xxbootstrap.css" />
-    <Content Include="Content\xxbootstrap.min.css" />
     <Content Include="Content\chosen-flatten.css" />
     <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\chosen.css" />
     <Content Include="Content\assetcalc.navbar.css" />
-    <Content Include="Content\xxassetcalc.table.css" />
-    <Content Include="Content\xxflatstrap.css" />
-    <Content Include="Content\xxassetcalc.pm.css" />
     <Content Include="Content\assetcalc.chzn.css" />
     <Content Include="Content\images\click-to-add-photo.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
@@ -93,7 +85,6 @@
     <Content Include="packages.config" />
     <Content Include="Content\toastr.less" />
     <Content Include="Content\bootstrap-chosen.less" />
-    <Content Include="Content\xxassetcalc.print.css" />
     <Content Include="Menu.master" />
     <Content Include="PlanManager\Home.aspx" />
     <Content Include="ProjectManager\ProjectManager.master" />
@@ -108,6 +99,7 @@
     <Content Include="ProjectManager\Home.aspx" />
     <Content Include="Scripts\assetcalc.js" />
     <Content Include="Scripts\assetcalc.test.js" />
+    <Content Include="Scripts\libs\odometer.min.js" />
     <Content Include="Scripts\planmanager.models.js" />
     <Content Include="Scripts\planmanager.view.js" />
     <Content Include="Scripts\libs\bootstrap.js" />
@@ -157,6 +149,13 @@
     </Compile>
     <Compile Include="ACTest\Menu_Master_Test.aspx.designer.cs">
       <DependentUpon>Menu_Master_Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACTest\ObservationForm_Test.aspx.cs">
+      <DependentUpon>ObservationForm_Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACTest\ObservationForm_Test.aspx.designer.cs">
+      <DependentUpon>ObservationForm_Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="ACTest\Site_Master_Test.aspx.cs">
       <DependentUpon>Site_Master_Test.aspx</DependentUpon>
@@ -240,6 +239,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NewFolder1\" />
     <Folder Include="tmp\" />
   </ItemGroup>
   <PropertyGroup>

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>AssetCALC 4</title>
+    <title>AssetCALC by EMG</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css' />
@@ -19,12 +19,10 @@
 
     <link href="Content/assetcalc.css" rel="stylesheet" />
     <link href="Content/assetcalc.chzn.css" rel="stylesheet" />
-    <!--<link href="Content/assetcalc.input.css" rel="stylesheet" />-->
+    
     <link href="Content/assetcalc.navbar.css" rel="stylesheet" />
-    <!--<link href="Content/assetcalc.nav.css" rel="stylesheet" />
-    <link href="Content/assetcalc.print.css" rel="stylesheet" />
-    <link href="Content/assetcalc.table.css" rel="stylesheet" />-->
-
+    <link href="Content/assetcalc.gridforms.css" rel="stylesheet" />
+    
     <asp:ContentPlaceHolder ID="Css" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -47,7 +45,10 @@
     <script src="../Scripts/libs/holder.js"></script>
     <script src="../Scripts/libs/stupidtable.js"></script>
     <script src="../Scripts/libs/chart.js"></script>
-    
+    <!-- numeral library
+        -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+
 
     <script src="../Scripts/chart.ko.js"></script>
     <script src="../Scripts/assetcalc.js"></script>

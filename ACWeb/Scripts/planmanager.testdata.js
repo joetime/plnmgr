@@ -6,6 +6,9 @@ var dummyAttachmentSet1 = [
 ];
 
 var dummyMarkupTemplates = [
+    new MarkupTemplate({ category: 'Default', name: 'Base Contingency', isDefault: true, defaultValue: 10.00, type: '%' }),
+    new MarkupTemplate({ category: 'Default', name: 'Project Contingency', isDefault: true, defaultValue: 10.00, type: '%' }),
+
 	new MarkupTemplate({ category: 'Staff Salaries', name: 'Project Manager', isDefault: false, defaultValue: 8.00, type: '%'}),
 	new MarkupTemplate({ category: 'Staff Salaries', name: 'Agency', isDefault: false, defaultValue: 5.00, type: '%' }),
 	new MarkupTemplate({
@@ -92,7 +95,10 @@ function emptyBreakoutSet () {
 
 function emptyMarkupSet() {
     return [
-	new MarkupTemplate({ category: 'Staff Salaries', name: 'Project Manager', isDefault: false, defaultValue: 8.00, type: '%' }),
+    new MarkupTemplate({ category: 'Default', name: 'Base Contingency', isDefault: true, defaultValue: 10.00, type: '%' }),
+    new MarkupTemplate({ category: 'Default', name: 'Project Contingency', isDefault: true, defaultValue: 10.00, type: '%' }),
+
+    new MarkupTemplate({ category: 'Staff Salaries', name: 'Project Manager', isDefault: false, defaultValue: 8.00, type: '%' }),
 	new MarkupTemplate({ category: 'Staff Salaries', name: 'Agency', isDefault: false, defaultValue: 5.00, type: '%' }),
 	new MarkupTemplate({
 	    category: 'Staff Salaries', name: 'Construction Manager', isDefault: true, defaultValue: 8.00, type: '%',

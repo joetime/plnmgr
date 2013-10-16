@@ -214,8 +214,8 @@ var ProjectEstimate = function (vars) {
     var est = this;
 
     est.baseCost = ko.observable(vars.baseCost)
-    est.baseContingency = ko.observable(vars.baseContingency);
-    est.projectContingency = ko.observable(vars.projectContingency);
+    est.baseContingency = ko.observable(0);
+    est.projectContingency = ko.observable(0);
 
     est.markupTemplates = ko.observableArray(vars.markupTemplates);
 
@@ -275,6 +275,8 @@ var MarkupTemplate = function (vars) {
 	tmp.defaultValue = ko.observable(vars.defaultValue);
 
 	if (!vars.ui) vars.ui = {};
+	if (vars.isDefault) vars.ui.uiChecked = true;
+
 	$.extend(tmp, new uiSet(vars.ui));
 
     // calculates markup value 
@@ -327,19 +329,33 @@ var colorArray = [
     '#d9534f',
     '#463265',
     '#00CCCC',
-    '#5cb85c',
-]
+    '#5cb85c'];
 
 var colorArray2 = [
 	'#4DB27C', '#634873', '#332916', '#36664C', '#B29256', '#9E65BF',
-]
+];
 
 var statusArray = [
+    '',
     'Project definition',
     'Planning',
     'Design',
     'Implementation',
     'Close-out'];
+
+var categoryArray = [
+    '',
+    'Accessibility',
+    'Transportation',
+    'Infrastructure',
+    'Energy',
+    'Other'];
+
+var priorityArray = [
+    '',
+    'High',
+    'Medium',
+    'Low'];
 
 
 var BreakoutCategory = function (vars) {

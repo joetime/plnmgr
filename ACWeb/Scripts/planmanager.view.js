@@ -4,18 +4,23 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
     pageTitle: 'Arlington VA, Plans',
 
 
-    collapseMenu: function () {
-        return;
+    menuExpanded: true,
+    toggleMenu: function () {
+        if (myPageModel.menuExpanded) myPageModel.collapseMenu();
+        else myPageModel.expandMenu();
+
+        myPageModel.menuExpanded = !myPageModel.menuExpanded;
+    },
+    collapseMenu: function () {    
         $('#column-nav').fadeOut(500);
         window.setTimeout(function () {
             $('#column-main').addClass("col-md-12");
         }, 501);
     },
     expandMenu: function () {
+        console.log('expand');
         $('#column-main').removeClass("col-md-12");
-        //window.setTimeout(function () {
-            $('#column-nav').fadeIn(500);
-        //}, 1001);
+        $('#column-nav').fadeIn(500);
     },
 
 
@@ -67,10 +72,9 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
         myPageModel.selectedPlan(plan)
 
         $(".table-sort").stupidtable(); console.log('stupidtable');
-        //$("textarea").load(function () {
-            $("textarea").height($("textarea")[0].scrollHeight);
-            console.log('resize textarea');
-        //});
+        
+        $("textarea").height($("textarea")[0].scrollHeight);
+        console.log('resize textarea');
     },
     selectFirstPlan: function () {
         myPageModel.selectPlan(myPageModel.allPlans()[0]);
@@ -185,6 +189,11 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
         myPageModel.selectedProject(project);
 
         $(".table-sort").stupidtable(); console.log('stupidtable');
+
+        $("[data-help-text]").hover(function () {
+            console.log(this);
+            $("#estimateHelp").text($(this).attr("data-help-text"));
+        });
     },
     
     saveProject: function () {

@@ -70,6 +70,20 @@
         .progress-fat {
             height: 27px;
         }
+        label.bg-color-1 {
+            color: white !important; /* need important because grid-forms is so specific*/
+        }
+        label[class*="bg-color-"] {
+            color: white !important;
+        }
+        h3 button.btn.btn-sm.btn-default {
+            padding: 0px 5px;
+        }
+        #collapseButton {
+            position: fixed;
+            top:80px;
+            left:-10px;
+        }
     </style>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder" runat="server">
@@ -80,12 +94,13 @@
     <!-- /ko -->
 
     <div class="container-content">
-
+        <button id="collapseButton" class="btn btn-sm btn-default hidden-print" 
+            data-bind="click: toggleMenu">&nbsp;&laquo;</button>
         <div class="row">
             
             <!-- nav panel 
                 -->
-            <div id="column-nav" class="col-md-3">
+            <div id="column-nav" class="col-md-3 hidden-print">
 
                 <h2 data-bind="text: pageTitle, click: selectFirstPlan"></h2>
                 
@@ -99,13 +114,13 @@
                     
                     <li class="nav-divider"></li>
                     <li><br />
-                         <button class="btn btn-success" data-bind="click: newPlan">New plan...</button> </li>
+                         <button class="btn btn-success btn-sm" data-bind="click: newPlan">New plan...</button> </li>
                 </ul>
             </div>
             <div id="column-main" class="col-md-9">
                 
                 <div>
-                <!-- ko template: { if: selectedPlan, name: 'planDetailsForm', data: selectedPlan } -->
+                <!-- ko template: { if: selectedPlan, name: 'planTabsTemplate', data: selectedPlan } -->
                 <!-- /ko -->
                 </div>
 
@@ -122,9 +137,11 @@
 
     <script>
         $(document).ready(function () {
-
+            
             ko.applyBindings(myPageModel);
+
             myPageModel.selectFirstPlan();
+
         });
     </script>
 
