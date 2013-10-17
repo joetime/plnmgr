@@ -65,28 +65,37 @@
     <Content Include="ACTest\Menu_Master_Test.aspx" />
     <Content Include="ACTest\ObservationForm_Test.aspx" />
     <Content Include="ACTest\Site_Master_Test.aspx" />
-    <Content Include="Content\assetcalc.css" />
-    <Content Include="Content\assetcalc.gridforms.css" />
-    <Content Include="Content\gridforms.css" />
-    <Content Include="Content\assetcalc.test.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\chosen-flatten.css" />
-    <Content Include="Content\chosen-sprite.png" />
-    <Content Include="Content\chosen.css" />
-    <Content Include="Content\assetcalc.navbar.css" />
-    <Content Include="Content\assetcalc.chzn.css" />
+    <Content Include="Content\assetcalc\assetcalc.css" />
+    <Content Include="Content\assetcalc\assetcalc.gridforms.css" />
+    <Content Include="Content\assetcalc\assetcalc.colors.css" />
+    <Content Include="Content\libs\gridforms.css" />
+    <Content Include="Content\libs\bootstrap.css" />
+    <Content Include="Content\libs\bootstrap.min.css" />
+    <Content Include="Content\libs\chosen-flatten.css" />
+    <Content Include="Content\libs\chosen-sprite.png" />
+    <Content Include="Content\libs\chosen.css" />
+    <Content Include="Content\assetcalc\assetcalc.navbar.css" />
+    <Content Include="Content\assetcalc\assetcalc.chzn.css" />
     <Content Include="Content\images\click-to-add-photo.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\libs\toastr.css" />
+    <Content Include="Content\libs\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
-    <Content Include="Content\toastr.less" />
-    <Content Include="Content\bootstrap-chosen.less" />
+    <Content Include="Content\libs\toastr.less" />
+    <Content Include="Content\libs\bootstrap-chosen.less" />
     <Content Include="Menu.master" />
     <Content Include="PlanManager\Home.aspx" />
+    <Content Include="PlanManager\UserControls\PlanForm.ascx" />
+    <Content Include="PlanManager\UserControls\PlanTabs.ascx" />
+    <Content Include="PlanManager\UserControls\ProjectAttachments.ascx" />
+    <Content Include="PlanManager\UserControls\ProjectBreakouts.ascx" />
+    <Content Include="PlanManager\UserControls\ProjectEstimate.ascx" />
+    <Content Include="PlanManager\UserControls\ProjectExpenditures.ascx" />
+    <Content Include="PlanManager\UserControls\ProjectForm.ascx" />
+    <Content Include="PlanManager\UserControls\ProjectTabs.ascx" />
+    <Content Include="PlanManager\UserControls\SearchModal.ascx" />
     <Content Include="ProjectManager\ProjectManager.master" />
     <Content Include="Scripts\assetcalc.chart.js" />
     <Content Include="Scripts\assetcalc.pm.project.js" />
@@ -178,12 +187,75 @@
     <Compile Include="PlanManager\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PlanManager\UserControls\PlanForm.ascx.cs">
+      <DependentUpon>PlanForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\PlanForm.ascx.designer.cs">
+      <DependentUpon>PlanForm.ascx</DependentUpon>
+    </Compile>
     <Compile Include="PlanManager\PlanManager.master.cs">
       <DependentUpon>PlanManager.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PlanManager\PlanManager.master.designer.cs">
       <DependentUpon>PlanManager.master</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\PlanTabs.ascx.cs">
+      <DependentUpon>PlanTabs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\PlanTabs.ascx.designer.cs">
+      <DependentUpon>PlanTabs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectAttachments.ascx.cs">
+      <DependentUpon>ProjectAttachments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectAttachments.ascx.designer.cs">
+      <DependentUpon>ProjectAttachments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectBreakouts.ascx.cs">
+      <DependentUpon>ProjectBreakouts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectBreakouts.ascx.designer.cs">
+      <DependentUpon>ProjectBreakouts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectEstimate.ascx.cs">
+      <DependentUpon>ProjectEstimate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectEstimate.ascx.designer.cs">
+      <DependentUpon>ProjectEstimate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectExpenditures.ascx.cs">
+      <DependentUpon>ProjectExpenditures.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectExpenditures.ascx.designer.cs">
+      <DependentUpon>ProjectExpenditures.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectForm.ascx.cs">
+      <DependentUpon>ProjectForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectForm.ascx.designer.cs">
+      <DependentUpon>ProjectForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectTabs.ascx.cs">
+      <DependentUpon>ProjectTabs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\ProjectTabs.ascx.designer.cs">
+      <DependentUpon>ProjectTabs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\SearchModal.ascx.cs">
+      <DependentUpon>SearchModal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanManager\UserControls\SearchModal.ascx.designer.cs">
+      <DependentUpon>SearchModal.ascx</DependentUpon>
     </Compile>
     <Compile Include="ProjectManager\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

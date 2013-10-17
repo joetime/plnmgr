@@ -21,19 +21,16 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-inverse">
             <ul class="nav navbar-nav">
                 
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Cost Library</a></li>
-                <li><a href="#">Reports</a></li>
-                <li class=""><a href="../PlanManager/Home.aspx">Plans</a></li>
+                <li id="menulink-portfolio"><a href="#">Portfolio</a></li>
+                <li id="menulink-costlibrary"><a href="#">Cost Library</a></li>
+                <li id="menulink-reports"><a href="#">Reports</a></li>
+                <li  id="menulink-plans"><a href="../PlanManager/Home.aspx">Plans</a></li>
 
-                <li class="dropdown">
+                <li id="menulink-test" class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tests <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="../ACTest/Menu_Master_Test.aspx">Menu Master</a></li>
                         <li><a href="../ACTest/ObservationForm_Test.aspx">Observation Form</a></li>
-                        <!--<li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>-->
                     </ul>
                 </li>
 
@@ -52,7 +49,17 @@
 <asp:Content ContentPlaceHolderID="Javascript" runat="server">
 
     <!-- Menu.master javascript -->
-    <script></script>
+    <script>
+        
+        // a little script to highlight the correct menu item
+        if (document.URL.indexOf('PlanManager') >= 0) {
+            $("li#menulink-plans").addClass("active");
+        } 
+        else if (document.URL.indexOf('ACTest') >= 0) {
+            $("li#menulink-test").addClass("active");
+        }
+
+    </script>
     <!-- END Menu.master javascript -->
 
     <asp:ContentPlaceHolder ID="Javascript" runat="server"></asp:ContentPlaceHolder>

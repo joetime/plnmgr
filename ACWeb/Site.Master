@@ -8,20 +8,21 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css' />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/libs/bootstrap.min.css" rel="stylesheet" />
     
-    <link href="Content/chosen.css" rel="stylesheet" />
-    <link href="Content/chosen-flatten.css" rel="stylesheet" />
-    <link href="Content/toastr.css" rel="stylesheet" />
+    <link href="Content/libs/chosen.css" rel="stylesheet" />
+    <link href="Content/libs/chosen-flatten.css" rel="stylesheet" />
+    <link href="Content/libs/toastr.css" rel="stylesheet" />
     
-    <link href="Content/gridforms.css" rel="stylesheet" />
+    <link href="Content/libs/gridforms.css" rel="stylesheet" />
 
 
-    <link href="Content/assetcalc.css" rel="stylesheet" />
-    <link href="Content/assetcalc.chzn.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.chzn.css" rel="stylesheet" />
     
-    <link href="Content/assetcalc.navbar.css" rel="stylesheet" />
-    <link href="Content/assetcalc.gridforms.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.navbar.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.gridforms.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.colors.css" rel="stylesheet" />
     
     <asp:ContentPlaceHolder ID="Css" runat="server">
     </asp:ContentPlaceHolder>
@@ -48,6 +49,7 @@
     <!-- numeral library
         -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+
 
 
     <script src="../Scripts/chart.ko.js"></script>

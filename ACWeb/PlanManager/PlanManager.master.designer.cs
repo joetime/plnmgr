@@ -13,6 +13,15 @@ namespace ACWeb.PlanManager {
     public partial class PlanManager {
         
         /// <summary>
+        /// JavascriptPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder JavascriptPlaceHolder;
+        
+        /// <summary>
         /// CssPlaceHolder control.
         /// </summary>
         /// <remarks>
@@ -38,14 +47,5 @@ namespace ACWeb.PlanManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder;
-        
-        /// <summary>
-        /// JavascriptPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder JavascriptPlaceHolder;
     }
 }

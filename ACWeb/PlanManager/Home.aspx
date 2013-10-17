@@ -46,39 +46,11 @@
         .text-focus {
             color: #004444;
         }
-        .bg-color-1 {
-            background-color: #006666;
-        }
-        .bg-color-2 {
-            background-color: #5bc0de;
-        }
-        .bg-color-3 {
-            background-color: #f0ad4e;
-        }
-        .bg-color-4 {
-            background-color: #d9534f;
-        }
-        .bg-color-5 {
-            background-color: #463265;
-        }
-        .bg-color-6 {
-            background-color: #00CCCC;
-        }
-        .bg-color-7 {
-            background-color: #5cb85c;
-        }
-        .progress-fat {
-            height: 27px;
-        }
-        label.bg-color-1 {
-            color: white !important; /* need important because grid-forms is so specific*/
-        }
-        label[class*="bg-color-"] {
-            color: white !important;
-        }
+        
         h3 button.btn.btn-sm.btn-default {
             padding: 0px 5px;
         }
+
         #collapseButton {
             position: fixed;
             top:80px;
@@ -86,6 +58,7 @@
         }
     </style>
 </asp:Content>
+
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder" runat="server">
 
     <div id="debugPanel"></div>
@@ -94,6 +67,7 @@
     <!-- /ko -->
 
     <div class="container-content">
+
         <button id="collapseButton" class="btn btn-sm btn-default hidden-print" 
             data-bind="click: toggleMenu">&nbsp;&laquo;</button>
         <div class="row">
@@ -114,7 +88,7 @@
                     
                     <li class="nav-divider"></li>
                     <li><br />
-                         <button class="btn btn-success btn-sm" data-bind="click: newPlan">New plan...</button> </li>
+                         <button class="btn btn-success btn-sm" data-bind="click: newPlan">New Plan...</button> </li>
                 </ul>
             </div>
             <div id="column-main" class="col-md-9">
@@ -127,6 +101,7 @@
             </div>
         </div>
     </div>
+
 </asp:Content>
 <asp:Content ContentPlaceHolderID="AsidePlaceHolder" runat="server"></asp:Content>
 <asp:Content ContentPlaceHolderID="JavascriptPlaceHolder" runat="server">
@@ -141,7 +116,6 @@
             ko.applyBindings(myPageModel);
 
             myPageModel.selectFirstPlan();
-
         });
     </script>
 

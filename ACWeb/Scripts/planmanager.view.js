@@ -1,9 +1,11 @@
-﻿var myPageModel =
+﻿
+var myPageModel =
 $.extend(masterPageModel(),  // ** extend the basepage pagemodel
 {
     pageTitle: 'Arlington VA, Plans',
 
-
+    /* menu collapse/expand actions 
+    */
     menuExpanded: true,
     toggleMenu: function () {
         if (myPageModel.menuExpanded) myPageModel.collapseMenu();
@@ -24,10 +26,38 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
     },
 
 
+    /* attachments
+    */
     queuedFiles: ko.observableArray(),
+    previewFiles: function () {
+        var oFReader = new FileReader();
+        myPageModel.queuedFiles([]);
+        var files = document.getElementById("uploadImage").files
 
+        //console.log(files);
 
+        for (var i = 0; i < files.length; i++)  //for multiple files          
+        {
+            //console.log('here');
+            (function (file) {
+                var name = file.name;
+                if (file.type == 'image/jpeg') {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        myPageModel.queuedFiles.push({ source: e.target.result, name: name });
+                    }
+                    reader.readAsDataURL(file);
+                }
+                else {
+                    //todo
+                    myPageModel.queuedFiles.push({ source: 'http://www.philobia.com/images/pdf.png', name: name });
+                }
+            })(files[i]);
+        }
+    },
 
+    /* search
+    */
     searchResults: ko.observableArray([]),
     openSearch: function () {
         $('#searchModal').modal('show');
@@ -44,11 +74,8 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
         $('#searchInput').select();
     },
 
-
-    /* Plans UI Controllers */
-
-    
-
+    /* Plans
+    */
     allPlans: ko.observableArray(dummyPlanSet),
     selectedPlan: ko.observable(),
     statusOptions: ko.observable(statusArray),
@@ -123,13 +150,9 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
         console.log(ko.toJSON(plan));
     },
 
-    changeMarkup: function () {
-        $("#markupTotalInputGroup").effect("pulsate",
-              {times:5}, 3000 );
-    },
 
-
-    /* Add Project , blank and assetcalc*/
+    /* Add Project , blank and assetcalc
+    */
     addProjectAssetCalc: function (acobservation) {
         console.log('addProjectAssetCalc');
         if (!myPageModel.selectedPlan()) {
@@ -175,7 +198,8 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
 
 
 
-    /* Projects UI Controllers */
+    /* Projects  
+    */
 
     allProjects: ko.observableArray([]),
     selectedProject: ko.observable(),
@@ -214,31 +238,3 @@ $.extend(masterPageModel(),  // ** extend the basepage pagemodel
     attAttachment: function () { },
 
 });
-
-
-function PreviewImage() {
-    var oFReader = new FileReader();
-    myPageModel.queuedFiles([]);
-    var files = document.getElementById("uploadImage").files
-
-    //console.log(files);
-
-    for (var i = 0; i < files.length; i++)  //for multiple files          
-    {
-        //console.log('here');
-        (function (file) {
-            var name = file.name;
-            if (file.type == 'image/jpeg') {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    myPageModel.queuedFiles.push({ source: e.target.result, name: name });
-                }
-                reader.readAsDataURL(file);
-            }
-            else {
-                //todo
-                myPageModel.queuedFiles.push({ source: 'http://www.philobia.com/images/pdf.png', name: name });
-            }
-        })(files[i]);
-    }
-};
