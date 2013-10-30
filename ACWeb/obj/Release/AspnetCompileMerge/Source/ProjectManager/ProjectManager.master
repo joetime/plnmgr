@@ -11,31 +11,34 @@
 
 <asp:Content ID="Content" ContentPlaceHolderID="Content" runat="server">
 
-    <div class="container-fluid" id="projectManagerContainer">
+    <div class="container" id="projectManagerContainer">
 
-        <i id="collapseButton" data-bind="click: togglePanel" class="icon-chevron-left hidden-print"></i>
+        <!--<i id="collapseButton" data-bind="click: togglePanel" class="icon-chevron-left hidden-print"></i>-->
 
-        <div class="row-fluid">
+        <div class="row">
 
             <!-- lefthand panel -->
-            <div id="leftPanel" class="span3 hidden-print">
+            <div id="leftPanel" class="col-lg-3 hidden-print">
 
                 <!--menu-->
-                <div class="well">
+                <div class="panel panel-default">
+                    <div class="panel-heading">AssetCALC Projects</div>
+                    <div class="panel-body">
                     <ul class="nav nav-list" id="leftMenu">
-                        <li class="nav-header">AssetCALC Projects</li>
                         <li class="active"><a href="#activeProjectsView" data-toggle="tab">Active Projects</a></li>
                         <!-- ko foreach: menuItems -->
                         <li><a data-toggle="tab" data-bind="visible: !hide, attr: { id: id + 'MenuItem', href: id + 'View' }, text: name"></a></li>
                         <!-- /ko -->
                     </ul>
+                        </div>
                 </div>
+
                 <asp:ContentPlaceHolder ID="ContentLeft" runat="server"></asp:ContentPlaceHolder>
 
             </div>
 
-
-            <div id="rightPanel" class="span9 test-pad-top-10">
+            <!-- righthand panel -->
+            <div id="rightPanel" class="col-lg-9 test-pad-top-10">
 
                 <asp:ContentPlaceHolder ID="ContentRight" runat="server"></asp:ContentPlaceHolder>
 

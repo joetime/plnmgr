@@ -13,6 +13,15 @@
 	}
 ];
 
+testPieChartDataObservables = [
+
+    chartko.factory.pieArrayItem(30, "#F38630"),
+    chartko.factory.pieArrayItem(50, "#E0E4CC"),
+    chartko.factory.pieArrayItem(90, "#69D2E7"),
+];
+
+
+
 var testLineChartData = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [

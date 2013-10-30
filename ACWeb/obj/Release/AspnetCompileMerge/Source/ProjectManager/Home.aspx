@@ -1,14 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProjectManager/ProjectManager.master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="ACWeb.ProjectManager.HomePage" %>
 
 <asp:Content ID="CssContent" ContentPlaceHolderID="Css" runat="server">
-    <style>
-    </style>
+   
 </asp:Content>
 
 <asp:Content ID="LeftPanel" ContentPlaceHolderID="ContentLeft" runat="server">
-    <div class="well well-small">
-        <h4>Recent Activity</h4>
-        <ul class="unstyled">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        Recent Activity</div>
+        <div class="panel-body">
+        <ul class="list-unstyled">
             <li class="activity">
                 <span class="activity-time">today</span>
                 <span class="activity-user">jscala</span>
@@ -31,6 +32,7 @@
                         <span class="activity-project">Library Maintenance</span> </li>
         </ul>
         <span class="muted">see all activity</span>
+        </div>
     </div>
 </asp:Content>
 
@@ -41,7 +43,7 @@
         <div id="activeProjectsView" class="tab-pane active in">
 
             <div class="toolbar pull-right">
-                <a class="btn btn-success" data-bind="click: $root.createNewProject"><i class="icon-plus icon-white"></i>New Project</a>
+                <a class="btn btn-default" rel="add" data-bind="click: $root.createNewProject">New Project...</a>
             </div>
 
             <h3>Active Projects</h3>
@@ -300,7 +302,14 @@
             </p>
             <div class="row-fluid">
                 <div class="span6 well well-bright">
-                    <canvas height="300" width="400" data-bind="pieChart: $root.pieData"></canvas>
+                    <canvas height="300" width="400" id="piechartCanvas" data-bind="pieChart: pieData, chartRefresh: doRefresh"></canvas>
+                    <button class="btn" data-bind="click: pushPie">push</button>
+                    <button class="btn" data-bind="click: refreshPie">refresh</button>
+                    <div class="well" data-bind="foreach: pieData">
+                        <div><input data-bind="value: valueInput" />
+                        <input data-bind="value: colorInput" />
+                        </div>
+                    </div>
                 </div>
                 <div class="span6 well well-bright">
                     <canvas height="300" width="400" data-bind="lineChart: $root.lineData"></canvas>
@@ -382,150 +391,23 @@
     <!--
         ** Page Model
         -->
+    <script src="../Scripts/assetcalc.pm.vm.js"></script>
     <script>
-
-        var myPageModel =
-            $.extend(pageModel(),  // ** extend the basepage pagemodel
-            {
-                /// OBSERVABLES ///////////////////////////
-
-                projects: ko.observableArray(testProjects),
-                activeProject: ko.observable(),
-                activeTask: ko.observable(),
-                searchResults: ko.observableArray(),
-
-
-                /// TEST DATA //////////////////////////////
-
-                // note that pieData is an observableArray, 
-                // while barData and lineData are just observables
-                // (you can also use non-observable arrays/vars)
-
-                pieData: ko.observableArray(testPieChartData),
-                barData: ko.observable(testBarChartData),
-                lineData: ko.observable(testLineChartData),
-
-
-                pushPieData: function() {
-                    this.pieData.push({ value: 100, color: "#123456" });
-                },
-
-                ///////////////////////////////////////////
-
-                // ** switch active tab
-                //
-                resolveTabs: function () {
-                    console.log('here');
-                    $("#activeProjectMenu li").removeClass("active");
-                    $("#searchAndAddMenuItem").addClass("active");
-                },
-
-                // ** open project (change activeProject)
-                //
-                projectRowClick: function (item) {
-
-                    console.log(item);
-
-                    myPageModel.activeProject(item);
-
-                    $("#leftMenu li").removeClass("active");
-                    $("#activeProjectsView").removeClass("active");
-
-                    $("#activeProjectView").addClass("active");
-
-                    $("#taskDetailsPanel").fadeOut();
-
-                    $(".chzn-select").chosen();
-                },
-
-                // ** open task (change activeTask)
-                //
-                taskRowClick: function (item) {
-
-                    myPageModel.activeTask(item);
-                    $("#taskDetailsPanel").fadeIn();
-                    scrollToElement("#taskDetailsPanel", null, -10);
-                },
-
-                // ** dismiss and scroll top
-                //
-                closeTaskDetails: function (item) {
-
-                    $("#taskDetailsPanel").fadeOut();
-                    scrollToElement("#activeProjectView", null, -10);
-                },
-
-                // ** blank project and open
-                //
-                createNewProject: function () {
-                    var project = new Project();
-
-                    // add to front of array
-                    myPageModel.projects.splice(0, 0, project);
-
-                    // clear activeTask
-                    myPageModel.activeTask();
-
-                    toastr.success("New project created.");
-                    myPageModel.projectRowClick(myPageModel.projects()[0]);
-
-                    $("#projectNameTextBox").select();
-                },
-
-                // ** execute search
-                //
-                doSearch: function () {
-                    myPageModel.searchResults(testSearchResults);
-                    console.log(myPageModel.searchResults());
-                    scrollToElement("#searchResultsTable");
-                },
-
-                // ** not implemented - show search window
-                //
-                addEmgTask: function () {
-
-                },
-
-                // ** not implemented - show search window
-                //
-                addBlankTask: function () {
-                },
-
-                // ** creates new task (with defaults) and adds to project
-                //
-                addResultToProject: function (item) {
-                    $('tr[data-id=' + item.id + ']').addClass('tr-adding');
-
-                    var t = new Task(item.id);
-
-                    t.name(item.name);
-                    t.priority(item.priority);
-                    t.status("NEW");
-                    t.estCost(item.cost);
-                    t.category(item.category);
-
-                    myPageModel.activeProject().tasks.splice(0, 0, t);
-                    //myPageModel.activeProject().tasks.push(t);
-
-                    toastr.success("New task created.");
-
-                    $('tr[data-id=' + item.id + ']').fadeOut();
-                }
-            });
-
         // ** apply KO and CHZN bindings
         //
         $(document).ready(function () {
 
             //myPageModel.pieData(testPieChartData);
-            console.log(myPageModel.pieData());
+            //console.log(myPageModel.pieData());
 
             ko.applyBindings(myPageModel);  // apply bindings
             console.log('ko bindings applied')
 
             $("chzn-select").chosen();
+            console.log('chzn applied')
+
             //myPageModel.pieData(testPieChartData);
-            console.log(myPageModel.pieData());
+            //console.log(myPageModel.pieData());
         });
 
     </script>

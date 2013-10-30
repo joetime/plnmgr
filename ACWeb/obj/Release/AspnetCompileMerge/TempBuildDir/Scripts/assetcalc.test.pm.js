@@ -35,8 +35,8 @@ var testbudgetBreakout = [
 
 
 var testTask = function () {
-    var t = new Task(3, "Office renovation", "In Progress", 17, 0);
-    t.description = "Replace carpet, lighting, and furniture";
+    var t = new Task(3, "Roof Repairs", "In Progress", 17, 0);
+    t.description = "Install new shingles, replace roof."
     t.markups = [
         { name: 'Staff Chargeback', percent: '15', dollars: '' },
         { name: 'Design', percent: '20', dollars: '' },
@@ -57,12 +57,12 @@ var testTask = function () {
 
 //<!-- mockup : list of tasks -->
 var testTasks = [
-    new Task(1, "Repair front steps", "Complete", 13, 18, '1-High'),
-    new Task(3, "Recarpet periodicals area", "Planning", 33, 0, '2-Medium'),
+    new Task(1, "HVAC Corrective Maint.", "Complete", 13, 18, '1-High'),
+    new Task(3, "Lighting Retrofits", "Planning", 33, 0, '2-Medium'),
     testTask(),
-    new Task(4, "Paint interior", "Out for Bid", 49, 0, '2-Medium'),
-    new Task(8, "AC Upgrade", "On Hold", 67, 0, '3-Low'),
-    new Task(11, "Repoint brick exterior", "Not Started", 109, 0, '3-Low'),
+    new Task(4, "Solar PV Array", "Out for Bid", 49, 0, '2-Medium'),
+    new Task(8, "Parking Garage Sealing Deck", "On Hold", 67, 0, '3-Low'),
+    new Task(11, "Chiller Replacement", "Not Started", 109, 0, '3-Low'),
 ];
 
 
@@ -70,12 +70,14 @@ var testTasks = [
 
 var testProjectFly = {
     id: 22,
-    name: 'Library Renovation',
+    name: 'Central Library',
     taskCount: 18,
     status: 'In Progress',
     percentComplete: '30%',
     budget: 33,
-    description: 'Repairs and upgrades to the Community Library.'
+    fiscalYear: 2014,
+    description: 'Replace cab finishes, doors and elevator modernization, mill asphalt and overlay, HVAC upgrades and replacements.',
+    funding: 1234
 };
 
 var testProject = $.extend(testProjectFly, {
@@ -90,58 +92,68 @@ var testProject = $.extend(testProjectFly, {
 var testProjects = [
         testProject, // already set these
         {
-            id: 23, name: 'Rec Center', taskCount: 12,
+            id: 23, name: 'Fire Station #1', taskCount: 12,
             status: 'In Progress', percentComplete: '15%',
             budget: 22, priority: '2-Medium',
-            description: '',
+            description: 'Replace Fire Alarm, carpet, mill asphalt, replace HVAC, replace overhead doors, replace water heater, repoint masonry',
+            fiscalYear: 2014,
             defaultPhoto: '',
             tasks: testTasks,
             budgetBreakout: testbudgetBreakout,
-            documents: testDocList
+            documents: testDocList,
+            funding: 1234
         },
         {
-            id: 23, name: 'Site Work', taskCount: 12,
+            id: 23, name: 'Fire Station #4', taskCount: 12,
             status: 'In Progress', percentComplete: '80%',
             budget: 60, priority: '2-Medium',
-            description: '',
+            description: 'Replace furniture, replace cooling tower pumps & piping, replace fire alarm system',
+            fiscalYear: 2014,
             defaultPhoto: '',
             tasks: testTasks,
             budgetBreakout: testbudgetBreakout,
-        documents: testDocList
+            documents: testDocList,
+            funding: 1234
         },
         {
-            id: 23, name: 'Accessibility Improvements', 
+            id: 23, name: 'Equipment Bureau', 
             status: 'In Planning', percentComplete: '0%',
             budget: 120, priority: '2-Medium',
-            description: '',
+            description: 'Replace HVAC and BAS systems, paint interior walls, drywall.',
             defaultPhoto: '',
+            fiscalYear: 2014,
             tasks: testTasks,
             taskCount: 6,
             budgetBreakout: testbudgetBreakout,
-            documents: testDocList
+            documents: testDocList,
+            funding: 1234
         },
         {
-            id: 23, name: 'Firestation #5 Rehab', 
+            id: 23, name: 'Res. Program Center', 
             status: 'In Progress', percentComplete: '66%',
             budget: 22, priority: '2-Medium',
-            description: '',
+            description: 'Exterior finishes, replace boilers, air handling unit, replace ceramic tile, recaulk, carpet, replace passenger cab finishes, ceiling tiles, paint, mill asphalt.',
             defaultPhoto: '',
+            fiscalYear: 2014,
             tasks: testTasks,
             taskCount: 6,
             budgetBreakout: testbudgetBreakout,
-            documents: testDocList
+            documents: testDocList,
+            funding: 1234
         },
         {
-            id: 23, name: 'Furniture Upgrade', taskCount: 8,
+            id: 23, name: 'Barcroft', taskCount: 8,
             status: 'Complete', percentComplete: '100%',
             budget: 60, priority: '2-Medium',
-            description: '',
+            description: 'Mill asphalt, paint, replace roof top unit, replace elevator equipment components, replace fire panel, replace vinyl tile, replace gymnasium.',
+            fiscalYear: 2014,
             defaultPhoto: '',
             tasks: testTasks,
             budgetBreakout: testbudgetBreakout,
-            documents: testDocList
+            documents: testDocList,
+            funding: 1234
         },
-        {
+        /*{
             id: 23, name: 'Playground Improvements', taskCount: 6,
             status: 'In Planning', percentComplete: '65%',
             budget: 120, priority: '1-High',
@@ -180,6 +192,28 @@ var testProjects = [
             tasks: testTasks,
             budgetBreakout: testbudgetBreakout,
             documents: testDocList
-        }
+        }*/
 
 ];
+
+var testStatusOptions = [
+    { id: 1, name: 'Project Definition' },
+    { id: 2, name: 'Planning' },
+    { id: 3, name: 'Design' },
+    { id: 4, name: 'Implementation' },
+    { id: 3, name: 'Close-out' }
+];
+
+var testPriorityOptions = [
+    { id: 1, name: '1-High' },
+    { id: 2, name: '2-Medium' },
+    { id: 3, name: '3-Low' }
+];
+
+var testFundingOptions = [
+    { id: 1, name: 'PAYG' },
+    { id: 2, name: 'Bond' },
+    { id: 3, name: 'Other' }
+];
+
+var testCategoryOptions = [];

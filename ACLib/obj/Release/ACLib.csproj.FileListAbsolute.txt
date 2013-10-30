@@ -7,3 +7,12 @@ C:\Users\jscala\GitHub\AssetCALC 4.x\ACLib\bin\Release\JoeLib.pdb
 C:\Users\jscala\GitHub\AssetCALC 4.x\ACLib\obj\Release\ACLib.csprojResolveAssemblyReference.cache
 C:\Users\jscala\GitHub\AssetCALC 4.x\ACLib\obj\Release\ACLib.dll
 C:\Users\jscala\GitHub\AssetCALC 4.x\ACLib\obj\Release\ACLib.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\bin\Release\ACLib.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\bin\Release\ACLib.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\bin\Release\ACData.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\bin\Release\JoeLib.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\bin\Release\ACData.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\bin\Release\JoeLib.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\obj\Release\ACLib.csprojResolveAssemblyReference.cache
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\obj\Release\ACLib.dll
+C:\Users\jscala\GitHub\restore\plnmgr\ACLib\obj\Release\ACLib.pdb

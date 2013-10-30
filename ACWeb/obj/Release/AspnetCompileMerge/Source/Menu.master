@@ -4,48 +4,64 @@
     <asp:ContentPlaceHolder ID="Css" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
-    <div class="navbar navbar-static-top navbar-inverse hidden-print">
-        <div class="navbar-inner">
-            <a class="brand" href="#">AssetCALC 4</a>
-            <ul class="nav">
-                <li class=""><a href="#"><i class="icon-home icon-white"></i></a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Cost Library</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Replacement Reserve</a></li>
-                        <li><a href="#">Elements</a></li>
-                        <li><a href="#">Executive Summary</a></li>
-                        <li><a href="#">FCI</a></li>
-                    </ul>
-                </li>
-                <li class="active"><a href="#">Projects</a></li>
-                    
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a></li>
 
-                <asp:ContentPlaceHolder ID="MenuLeft" runat="server"></asp:ContentPlaceHolder>
-            </ul>
-            <div class="navbar-inner pull-right">
-                <ul class="nav">
-                    <li><a href="#"><i class="icon-search icon-white"></i></a></li>
-                    <li><a href="#"><i class="icon-user icon-white"></i></a></li>
-                    <li><a href="#"><i class="icon-wrench icon-white"></i></a></li>
-
-                </ul>
-            </div>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AssetCALC v0.1</a>
         </div>
 
-    </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-inverse">
+            <ul class="nav navbar-nav">
+                
+                <li id="menulink-portfolio"><a href="#">Portfolio</a></li>
+                <li id="menulink-costlibrary"><a href="#">Cost Library</a></li>
+                <li id="menulink-reports"><a href="#">Reports</a></li>
+                <li  id="menulink-plans"><a href="../PlanManager/Home.aspx">Plans</a></li>
+
+                <li id="menulink-test" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tests <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../ACTest/Menu_Master_Test.aspx">Menu Master</a></li>
+                        <li><a href="../ACTest/ObservationForm_Test.aspx">Observation Form</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <asp:ContentPlaceHolder ID="MenuLeft" runat="server"></asp:ContentPlaceHolder>
+                </li>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
 
     <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
 
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Javascript" runat="server">
+
     <!-- Menu.master javascript -->
-    <script></script>
+    <script>
+        
+        // a little script to highlight the correct menu item
+        if (document.URL.indexOf('PlanManager') >= 0) {
+            $("li#menulink-plans").addClass("active");
+        } 
+        else if (document.URL.indexOf('ACTest') >= 0) {
+            $("li#menulink-test").addClass("active");
+        }
+
+    </script>
     <!-- END Menu.master javascript -->
+
     <asp:ContentPlaceHolder ID="Javascript" runat="server"></asp:ContentPlaceHolder>
+
 </asp:Content>

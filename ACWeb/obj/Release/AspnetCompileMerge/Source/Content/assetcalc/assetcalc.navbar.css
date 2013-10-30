@@ -1,0 +1,44 @@
+﻿
+
+/* add margin (for fixed navbar) */
+.container {
+    margin-top: 65px;
+}
+
+/* bar */
+.navbar-inverse, 
+.navbar-default  /* when collapsed */
+{
+    background-color: #006666;
+}
+.navbar-default {
+    border-color: white;
+}
+
+/* menu  items */
+.navbar-inverse .navbar-nav > li > a {
+    color: #ddd;
+}
+.navbar-inverse .navbar-nav > li.active > a,
+    .navbar-inverse .navbar-nav > li.active > a:hover
+ {
+    background-color: white;
+    color: #006666;
+}
+
+/* when dropdown is opened, the main menu item turns this color */
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #005555;
+}
+
+.navbar-default .navbar-brand {
+    font-family: 'Anaheim', sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 22px;
+}
+
+
+ {
+    border-color: #e6e6e6; /* when collapsed, mo*/
+}

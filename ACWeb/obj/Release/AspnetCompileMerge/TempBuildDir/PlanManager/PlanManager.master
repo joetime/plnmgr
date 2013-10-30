@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Menu.master" AutoEventWireup="true" CodeBehind="PlanManager.master.cs" Inherits="ACWeb.PlanManager.PlanManager" %>
+
+<%@ Register TagPrefix="templates" TagName="PlanTabs" Src="~/PlanManager/UserControls/PlanTabs.ascx" %>
+<%@ Register TagPrefix="templates" TagName="PlanForm" Src="~/PlanManager/UserControls/PlanForm.ascx" %>
+
+<%@ Register TagPrefix="templates" TagName="ProjectTabs" Src="~/PlanManager/UserControls/ProjectTabs.ascx" %>
+<%@ Register TagPrefix="templates" TagName="ProjectForm" Src="~/PlanManager/UserControls/ProjectForm.ascx" %>
+<%@ Register TagPrefix="templates" TagName="ProjectAttachments" Src="~/PlanManager/UserControls/ProjectAttachments.ascx" %>
+<%@ Register TagPrefix="templates" TagName="ProjectEstimate" Src="~/PlanManager/UserControls/ProjectEstimate.ascx" %>
+<%@ Register TagPrefix="templates" TagName="ProjectBreakouts" Src="~/PlanManager/UserControls/ProjectBreakouts.ascx" %>
+<%@ Register TagPrefix="templates" TagName="ProjectExpenditures" Src="~/PlanManager/UserControls/ProjectExpenditures.ascx" %>
+
+<%@ Register TagPrefix="templates" TagName="SearchModal" Src="~/PlanManager/UserControls/SearchModal.ascx" %>
+
+
+
+<asp:Content ID="Script" ContentPlaceHolderID="Javascript" runat="server">
+
+    <!-- knockout templates -->
+
+    <templates:PlanTabs runat="server"></templates:PlanTabs>
+    <templates:PlanForm runat="server"></templates:PlanForm>
+
+    <templates:ProjectTabs runat="server"></templates:ProjectTabs>
+    <templates:ProjectForm runat="server"></templates:ProjectForm>
+    <templates:ProjectAttachments runat="server"></templates:ProjectAttachments>
+    <templates:ProjectEstimate runat="server"></templates:ProjectEstimate>
+    <templates:ProjectBreakouts runat="server"></templates:ProjectBreakouts>
+    <templates:ProjectExpenditures runat="server"></templates:ProjectExpenditures>
+
+    <templates:SearchModal runat="server"></templates:SearchModal>
+
+
+
+    <script src="../Scripts/planmanager.models.js"></script>    <!-- A file of test data for the page -->
+    
+    <script>
+        /// the masterpage viewmodel, will be extended by page viewmodel
+        //
+        var masterPageModel = function () {
+        };
+    </script>
+
+    <asp:ContentPlaceHolder ID="JavascriptPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+
+</asp:Content>
+
+
+<asp:Content ID="Css" ContentPlaceHolderID="Css" runat="server">
+    <asp:ContentPlaceHolder ID="CssPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Aside" ContentPlaceHolderID="MenuLeft" runat="server">
+    <asp:ContentPlaceHolder ID="AsidePlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content" ContentPlaceHolderID="Content" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

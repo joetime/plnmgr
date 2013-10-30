@@ -1,0 +1,74 @@
+﻿
+/*  RESET for BOOTSTRAP
+    *******************/
+
+/* bootstrap adds a margin */
+.grid-form legend {
+    margin-bottom: 0px;
+}
+/*  these inputs were not included */
+.grid-form input[type="date"], 
+.grid-form input[type="number"] {
+    background-color: transparent;
+    font-size: 18px;
+}
+
+
+/*  MY STYLE
+    ********/
+
+/* label light gray */
+.grid-form [data-row-span] [data-field-span] label:first-child {
+    color: #999;
+}
+/* textarea smaller font and margin */ 
+.grid-form textarea {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+/* modify the border type and color */
+.grid-form [data-row-span]  {
+    border-bottom: 1px dotted #ddd; }
+.grid-form [data-row-span] [data-field-span] {
+    border-right: 1px dotted #ddd; }
+
+/* remove border these input */
+.grid-form input[type="date"], 
+.grid-form input[type="number"] {
+    -webkit-appearance: none;
+    border: none;
+    padding-left: 3px;
+    width: 100%;
+}
+/* remove border on select */
+.grid-form select {
+    /*-webkit-appearance: none;*/
+    border: none;
+}
+/* no need for a border */
+.grid-form fieldset legend {
+    border-bottom: none;
+}
+
+
+
+
+
+/*SPECIAL STUFF*/
+
+/* calculated fields with a green background */
+.grid-form [data-row-span] [data-field-span].calculated {
+    background-color: #efe;
+    position: relative;
+    top: 1px;
+}
+/* invalid fields with a red background */
+.grid-form input:invalid {
+    background-color: #fee;
+}
+/* selected rows */
+.grid-form [data-row-span].success {
+        background-color: #efe;
+}
+
+

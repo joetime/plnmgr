@@ -1,0 +1,27 @@
+﻿.bg-color-1 {
+    background-color: #006666;  /* EMG Green */
+}
+.bg-color-2 {
+    background-color: #5bc0de;  /* light blue */
+}
+.bg-color-3 {
+    background-color: #f0ad4e;  /* medium orange */
+}
+.bg-color-4 {
+    background-color: #d9534f;  /* medium red */
+}
+.bg-color-5 {
+    background-color: #463265;  /* purple */
+}
+.bg-color-6 {
+    background-color: #00CCCC;  /* cyan */
+}
+.bg-color-7 {
+    background-color: #5cb85c;  /* kelly green */
+}
+.bg-color-8 {
+    background-color: #b9a95e;  /* gold */
+}
+label[class*="bg-color-"] {
+    color: white !important;
+}

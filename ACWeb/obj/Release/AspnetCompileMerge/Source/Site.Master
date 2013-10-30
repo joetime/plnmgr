@@ -4,25 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>AssetCALC 4</title>
+    <title>AssetCALC by EMG</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css' />
-    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link href="Content/flatstrap.css" rel="stylesheet" />
-    <link href="Content/chosen.css" rel="stylesheet" />
-    <link href="Content/chosen-flatten.css" rel="stylesheet" />
-    <link href="Content/toastr.css" rel="stylesheet" />
+    <link href="Content/libs/bootstrap.min.css" rel="stylesheet" />
     
+    <link href="Content/libs/chosen.css" rel="stylesheet" />
+    <link href="Content/libs/chosen-flatten.css" rel="stylesheet" />
+    <link href="Content/libs/toastr.css" rel="stylesheet" />
+    
+    <link href="Content/libs/gridforms.css" rel="stylesheet" />
 
-    <link href="Content/assetcalc.css" rel="stylesheet" />
-    <link href="Content/assetcalc.chzn.css" rel="stylesheet" />
-    <link href="Content/assetcalc.input.css" rel="stylesheet" />
-    <link href="Content/assetcalc.navbar.css" rel="stylesheet" />
-    <link href="Content/assetcalc.nav.css" rel="stylesheet" />
-    <link href="Content/assetcalc.print.css" rel="stylesheet" />
-    <link href="Content/assetcalc.table.css" rel="stylesheet" />
 
+    <link href="Content/assetcalc/assetcalc.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.chzn.css" rel="stylesheet" />
+    
+    <link href="Content/assetcalc/assetcalc.navbar.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.gridforms.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.colors.css" rel="stylesheet" />
+    
     <asp:ContentPlaceHolder ID="Css" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -35,17 +36,23 @@
     </div>
     </form>
 
-    <script src="../Scripts/jquery-2.0.2.min.js"></script>
-    <script src="../Scripts/jquery.cookie.js"></script>
-    <script src="../Scripts/knockout-2.2.1.js"></script>
-    <script src="../Scripts/toastr.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/chosen.jquery.min.js"></script>
-    <script src="../Scripts/holder.js"></script>
-    <script src="../Scripts/stupidtable.js"></script>
-    <script src="../Scripts/chart.js"></script>
-    <script src="../Scripts/chart.ko.js"></script>
+    <script src="../Scripts/libs/jquery-2.0.2.min.js"></script>
+    <script src="../Scripts/libs/underscore.js"></script>
+    <script src="../Scripts/libs/jquery.cookie.js"></script>
+    <script src="../Scripts/libs/knockout-2.2.1.js"></script>
+    <script src="../Scripts/libs/toastr.min.js"></script>
+    <script src="../Scripts/libs/bootstrap.min.js"></script>
+    <script src="../Scripts/libs/chosen.jquery.min.js"></script>
+    <script src="../Scripts/libs/holder.js"></script>
+    <script src="../Scripts/libs/stupidtable.js"></script>
+    <script src="../Scripts/libs/chart.js"></script>
+    <!-- numeral library
+        -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
 
+
+
+    <script src="../Scripts/chart.ko.js"></script>
     <script src="../Scripts/assetcalc.js"></script>
     <script src="../Scripts/assetcalc.chart.js"></script>
 

@@ -3,3 +3,8 @@ C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\bin\Release\JoeLib.pdb
 C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\obj\Release\JoeLib.csprojResolveAssemblyReference.cache
 C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\obj\Release\JoeLib.dll
 C:\Users\jscala\GitHub\AssetCALC 4.x\JoeLib\obj\Release\JoeLib.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\JoeLib\bin\Release\JoeLib.dll
+C:\Users\jscala\GitHub\restore\plnmgr\JoeLib\bin\Release\JoeLib.pdb
+C:\Users\jscala\GitHub\restore\plnmgr\JoeLib\obj\Release\JoeLib.csprojResolveAssemblyReference.cache
+C:\Users\jscala\GitHub\restore\plnmgr\JoeLib\obj\Release\JoeLib.dll
+C:\Users\jscala\GitHub\restore\plnmgr\JoeLib\obj\Release\JoeLib.pdb

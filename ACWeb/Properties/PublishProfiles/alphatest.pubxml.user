@@ -10,31 +10,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="ACTest/Chartjs_Test.aspx">
-      <publishTime>07/19/2013 12:06:46</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="ACTest/Flotr2_Test.aspx">
       <publishTime>07/18/2013 14:51:51</publishTime>
     </File>
+    <File Include="ACTest/HistoryTest.aspx">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
     <File Include="ACTest/Menu_Master_Test.aspx">
-      <publishTime>07/11/2013 09:14:12</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="ACTest/ObservationForm_Test.aspx">
+      <publishTime>10/16/2013 08:53:09</publishTime>
     </File>
     <File Include="ACTest/Site_Master_Test.aspx">
-      <publishTime>07/10/2013 13:37:58</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="bin/ACData.dll">
-      <publishTime>07/16/2013 10:35:10</publishTime>
+      <publishTime>10/30/2013 15:40:15</publishTime>
     </File>
     <File Include="bin/ACLib.dll">
-      <publishTime>07/16/2013 10:35:11</publishTime>
+      <publishTime>10/30/2013 15:40:15</publishTime>
     </File>
     <File Include="bin/ACWeb.dll">
-      <publishTime>07/19/2013 14:09:00</publishTime>
+      <publishTime>10/30/2013 15:40:17</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>07/10/2013 11:04:55</publishTime>
+      <publishTime>10/15/2013 15:01:15</publishTime>
     </File>
     <File Include="bin/JoeLib.dll">
-      <publishTime>07/16/2013 10:35:10</publishTime>
+      <publishTime>10/30/2013 15:40:14</publishTime>
     </File>
     <File Include="Content/assetcalc.chzn.css">
       <publishTime>07/16/2013 11:01:42</publishTime>
@@ -62,6 +68,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/assetcalc.test.css">
       <publishTime>07/10/2013 13:21:50</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.chzn.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.colors.css">
+      <publishTime>10/17/2013 08:52:59</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.css">
+      <publishTime>10/17/2013 08:53:42</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.gridforms.css">
+      <publishTime>10/17/2013 09:47:29</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.navbar.css">
+      <publishTime>10/17/2013 09:08:33</publishTime>
     </File>
     <File Include="Content/bootstrap-chosen.less">
       <publishTime>07/10/2013 11:22:41</publishTime>
@@ -91,13 +112,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2013 12:36:26</publishTime>
     </File>
     <File Include="Content/images/click-to-add-photo.png">
-      <publishTime>07/15/2013 13:26:43</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Content/images/glyphicons-halflings-white.png">
-      <publishTime>07/10/2013 11:15:32</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Content/images/glyphicons-halflings.png">
-      <publishTime>07/10/2013 11:15:32</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/bootstrap-chosen.less">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/bootstrap.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/bootstrap.min.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/chosen-flatten.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/chosen-sprite.png">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/chosen.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/gridforms.css">
+      <publishTime>10/15/2013 15:06:19</publishTime>
+    </File>
+    <File Include="Content/libs/toastr.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/toastr.less">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Content/libs/toastr.min.css">
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Content/toastr.css">
       <publishTime>07/10/2013 11:18:11</publishTime>
@@ -109,43 +160,82 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2013 11:18:11</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>07/19/2013 11:03:51</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Menu.master">
-      <publishTime>07/11/2013 12:52:49</publishTime>
+      <publishTime>10/17/2013 09:05:01</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/10/2013 11:22:41</publishTime>
+      <publishTime>10/15/2013 15:01:15</publishTime>
+    </File>
+    <File Include="PlanManager/Home.aspx">
+      <publishTime>10/30/2013 15:36:34</publishTime>
+    </File>
+    <File Include="PlanManager/PlanManager.master">
+      <publishTime>10/17/2013 09:49:05</publishTime>
+    </File>
+    <File Include="PlanManager/testdata.txt">
+      <publishTime>10/30/2013 15:36:55</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/PlanForm.ascx">
+      <publishTime>10/17/2013 09:18:14</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/PlanTabs.ascx">
+      <publishTime>10/30/2013 13:45:29</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/ProjectAttachments.ascx">
+      <publishTime>10/17/2013 10:13:02</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/ProjectBreakouts.ascx">
+      <publishTime>10/17/2013 09:36:20</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/ProjectEstimate.ascx">
+      <publishTime>10/30/2013 13:16:20</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/ProjectExpenditures.ascx">
+      <publishTime>10/30/2013 13:48:57</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/ProjectForm.ascx">
+      <publishTime>10/30/2013 15:35:02</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/ProjectTabs.ascx">
+      <publishTime>10/30/2013 15:35:26</publishTime>
+    </File>
+    <File Include="PlanManager/UserControls/SearchModal.ascx">
+      <publishTime>10/17/2013 09:14:46</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>07/19/2013 14:11:34</publishTime>
+      <publishTime>10/30/2013 15:40:28</publishTime>
     </File>
     <File Include="ProjectManager/Home.aspx">
-      <publishTime>07/19/2013 14:05:59</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="ProjectManager/ProjectManager.master">
-      <publishTime>07/19/2013 12:22:43</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="ProjectManager/Templates.ProjectManager.master">
-      <publishTime>07/16/2013 11:29:42</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/assetcalc.chart.js">
-      <publishTime>07/18/2013 14:33:25</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/assetcalc.js">
-      <publishTime>07/15/2013 11:40:40</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/assetcalc.pm.project.js">
-      <publishTime>07/15/2013 16:58:23</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/assetcalc.pm.task.js">
-      <publishTime>07/15/2013 13:42:41</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/assetcalc.pm.vm.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/assetcalc.test.js">
-      <publishTime>07/19/2013 11:19:15</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/assetcalc.test.pm.js">
-      <publishTime>07/19/2013 12:09:10</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>07/10/2013 11:15:32</publishTime>
@@ -157,16 +247,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2013 12:01:07</publishTime>
     </File>
     <File Include="Scripts/chart.ko.js">
-      <publishTime>07/19/2013 14:02:34</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/chart.ko.test.js">
-      <publishTime>07/19/2013 12:23:49</publishTime>
+      <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Scripts/chosen.jquery.js">
       <publishTime>07/10/2013 11:22:41</publishTime>
     </File>
     <File Include="Scripts/chosen.jquery.min.js">
       <publishTime>07/10/2013 11:22:41</publishTime>
+    </File>
+    <File Include="Scripts/Copy of planmanager.testdata.js">
+      <publishTime>10/30/2013 11:47:13</publishTime>
     </File>
     <File Include="Scripts/flotr2.js">
       <publishTime>07/18/2013 14:51:36</publishTime>
@@ -192,6 +285,75 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/knockout-2.2.1.js">
       <publishTime>07/10/2013 11:14:00</publishTime>
     </File>
+    <File Include="Scripts/libs/bootstrap.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/bootstrap.min.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/chart.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/chosen.jquery.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/chosen.jquery.min.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/holder.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/jquery-2.0.2.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/jquery-2.0.2.min.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/jquery-2.0.2.min.map">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/jquery.cookie.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/knockout-2.2.1.debug.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/knockout-2.2.1.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/odometer.min.js">
+      <publishTime>10/16/2013 08:21:47</publishTime>
+    </File>
+    <File Include="Scripts/libs/stupidtable.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/stupidtable.min.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/toastr.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/toastr.min.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/underscore.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/xxbootstrap.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/libs/xxbootstrap.min.js">
+      <publishTime>10/15/2013 15:01:14</publishTime>
+    </File>
+    <File Include="Scripts/planmanager.models.js">
+      <publishTime>10/30/2013 15:35:43</publishTime>
+    </File>
+    <File Include="Scripts/planmanager.testdata.js">
+      <publishTime>10/30/2013 13:01:26</publishTime>
+    </File>
+    <File Include="Scripts/planmanager.view.js">
+      <publishTime>10/30/2013 14:52:56</publishTime>
+    </File>
     <File Include="Scripts/stupidtable.js">
       <publishTime>07/15/2013 12:12:08</publishTime>
     </File>
@@ -208,10 +370,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2013 11:18:11</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>07/19/2013 11:58:26</publishTime>
+      <publishTime>10/17/2013 09:44:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/19/2013 14:11:32</publishTime>
+      <publishTime>10/30/2013 15:40:24</publishTime>
     </File>
   </ItemGroup>
 </Project>

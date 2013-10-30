@@ -87,6 +87,7 @@
     <Content Include="Content\libs\bootstrap-chosen.less" />
     <Content Include="Menu.master" />
     <Content Include="PlanManager\Home.aspx" />
+    <Content Include="PlanManager\testdata.txt" />
     <Content Include="PlanManager\UserControls\PlanForm.ascx" />
     <Content Include="PlanManager\UserControls\PlanTabs.ascx" />
     <Content Include="PlanManager\UserControls\ProjectAttachments.ascx" />
@@ -108,6 +109,7 @@
     <Content Include="ProjectManager\Home.aspx" />
     <Content Include="Scripts\assetcalc.js" />
     <Content Include="Scripts\assetcalc.test.js" />
+    <Content Include="Scripts\Copy of planmanager.testdata.js" />
     <Content Include="Scripts\libs\odometer.min.js" />
     <Content Include="Scripts\planmanager.models.js" />
     <Content Include="Scripts\planmanager.view.js" />

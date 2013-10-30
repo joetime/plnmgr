@@ -10,6 +10,7 @@
                 <tr>
                     <th data-sort="number" class="th-center th-muted">Id</th>
                     <th data-sort="string">Project Name</th>
+                    <th data-sort="string"><abbr title='Fiscal Year'>FY</abbr></th>            
                     <th data-sort="number" class="th-center">Tasks</th>
                     <th data-sort="string">Status</th>
                     <th data-sort="number">Percent Complete</th>
@@ -23,6 +24,7 @@
                     <td class="td-center row-hover-mute" data-bind="text: id"></td>
                     <td class="td-focus"><a href="#activeProjectView" data-toggle="tab" class="tr-clickable-target"
                         data-bind="text: name"></a></td>
+                    <td class="td-center" data-bind="text: fiscalYear"></td>
                     <td class="td-center" data-bind="text: taskCount"></td>
                     <td data-bind="text: status"></td>
                     <td>
