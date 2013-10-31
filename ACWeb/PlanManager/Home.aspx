@@ -102,17 +102,20 @@
 
 <asp:Content ContentPlaceHolderID="JavascriptPlaceHolder" runat="server">
     
-    <script src="../Scripts/planmanager.testdata.js"></script>
-    <script src="../Scripts/planmanager.view.js"></script>
-    <script src="../Scripts/libs/stupidtable.min.js"></script>
+    <script src="Scripts/planmanager.testdata.js"></script>
+    <script src="Scripts/planmanager.dd.js"></script>
+    <script src="Scripts/planmanager.models.js"></script>
+    <script src="Scripts/planmanager.view.js"></script>
 
     <script>
-        $(document).ready(function () {
-            ko.applyBindings(myPageModel);
 
-            // select first plan on load
-            myPageModel.loadData();
+        // bind model, 
+        // select first plan on load
+        $(document).ready(function () {
+            ko.applyBindings(myPageModel);  
+            myPageModel.loadData();         
         });
+
     </script>
 
 </asp:Content>

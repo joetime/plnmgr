@@ -70,6 +70,7 @@
     <Content Include="Content\assetcalc\assetcalc.colors.css" />
     <Content Include="Content\assetcalc\assetcalc.table.css" />
     <Content Include="Content\assetcalc\assetcalc.button.css" />
+    <Content Include="Content\assetcalc\assetcalc.modal.css" />
     <Content Include="Content\libs\gridforms.css" />
     <Content Include="Content\libs\bootstrap.css" />
     <Content Include="Content\libs\bootstrap.min.css" />
@@ -89,7 +90,7 @@
     <Content Include="Content\libs\bootstrap-chosen.less" />
     <Content Include="Menu.master" />
     <Content Include="PlanManager\Home.aspx" />
-    <None Include="PlanManager\testdata.dev.txt" />
+    <None Include="PlanManager\testdata.txt" />
     <Content Include="PlanManager\UserControls\PlanForm.ascx" />
     <Content Include="PlanManager\UserControls\PlanTabs.ascx" />
     <Content Include="PlanManager\UserControls\ProjectAttachments.ascx" />
@@ -99,22 +100,16 @@
     <Content Include="PlanManager\UserControls\ProjectForm.ascx" />
     <Content Include="PlanManager\UserControls\ProjectTabs.ascx" />
     <Content Include="PlanManager\UserControls\SearchModal.ascx" />
-    <Content Include="ProjectManager\ProjectManager.master" />
     <Content Include="Scripts\assetcalc.chart.js" />
-    <Content Include="Scripts\assetcalc.pm.project.js" />
-    <Content Include="Scripts\assetcalc.pm.task.js" />
-    <Content Include="ProjectManager\Templates.ProjectManager.master" />
     <Content Include="PlanManager\PlanManager.master" />
     <None Include="Properties\PublishProfiles\alphatest.pubxml" />
     <None Include="Properties\PublishProfiles\AssetCALC4Demo.pubxml" />
     <None Include="Scripts\libs\jquery-2.0.2.intellisense.js" />
-    <Content Include="ProjectManager\Home.aspx" />
     <Content Include="Scripts\assetcalc.js" />
     <Content Include="Scripts\assetcalc.test.js" />
-    <Content Include="Scripts\Copy of planmanager.testdata.js" />
     <Content Include="Scripts\libs\odometer.min.js" />
-    <Content Include="Scripts\planmanager.models.js" />
-    <Content Include="Scripts\planmanager.view.js" />
+    <Content Include="PlanManager\Scripts\planmanager.models.js" />
+    <Content Include="PlanManager\Scripts\planmanager.view.js" />
     <Content Include="Scripts\libs\bootstrap.js" />
     <Content Include="Scripts\libs\bootstrap.min.js" />
     <Content Include="Scripts\libs\underscore.js" />
@@ -125,7 +120,6 @@
     <Content Include="Scripts\chart.ko.test.js" />
     <Content Include="Scripts\libs\chosen.jquery.js" />
     <Content Include="Scripts\libs\chosen.jquery.min.js" />
-    <Content Include="Scripts\assetcalc.pm.vm.js" />
     <Content Include="Scripts\libs\holder.js" />
     <Content Include="Scripts\libs\jquery-2.0.2.js" />
     <Content Include="Scripts\libs\jquery-2.0.2.min.js" />
@@ -134,7 +128,6 @@
     <Content Include="Scripts\libs\knockout-2.2.1.js" />
     <Content Include="Scripts\libs\stupidtable.js" />
     <Content Include="Scripts\libs\stupidtable.min.js" />
-    <Content Include="Scripts\assetcalc.test.pm.js" />
     <Content Include="Scripts\libs\toastr.js" />
     <Content Include="Scripts\libs\toastr.min.js" />
     <Content Include="Web.config" />
@@ -261,27 +254,6 @@
     <Compile Include="PlanManager\UserControls\SearchModal.ascx.designer.cs">
       <DependentUpon>SearchModal.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ProjectManager\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManager\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectManager\ProjectManager.master.cs">
-      <DependentUpon>ProjectManager.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManager\ProjectManager.master.designer.cs">
-      <DependentUpon>ProjectManager.master</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectManager\Templates.ProjectManager.master.cs">
-      <DependentUpon>Templates.ProjectManager.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProjectManager\Templates.ProjectManager.master.designer.cs">
-      <DependentUpon>Templates.ProjectManager.master</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -292,7 +264,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\planmanager.testdata.js" />
+    <Content Include="PlanManager\Scripts\planmanager.testdata.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
