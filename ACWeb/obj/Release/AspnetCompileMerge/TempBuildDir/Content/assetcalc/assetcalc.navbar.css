@@ -1,11 +1,16 @@
 ﻿
-
-/* add margin (for fixed navbar) */
+/* add margin (for fixed navbar) 
+    */
 .container {
     margin-top: 65px;
 }
+.navbar {
+    margin-bottom: 5px;
+}
 
-/* bar */
+
+/* bar 
+    */
 .navbar-inverse, 
 .navbar-default  /* when collapsed */
 {
@@ -26,7 +31,9 @@
     color: #006666;
 }
 
-/* when dropdown is opened, the main menu item turns this color */
+/* when dropdown is opened,
+   the main menu item turns this color 
+    */
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: #005555;
 }
@@ -38,7 +45,3 @@
     font-size: 22px;
 }
 
-
- {
-    border-color: #e6e6e6; /* when collapsed, mo*/
-}

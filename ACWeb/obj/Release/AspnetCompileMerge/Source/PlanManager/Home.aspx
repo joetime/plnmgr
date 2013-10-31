@@ -4,16 +4,11 @@
 
 <asp:Content ContentPlaceHolderID="CssPlaceHolder" runat="server">
     <style>
-        [data-sort="string"]:hover,[data-sort="float"]:hover,[data-sort="int"]:hover {
-            text-decoration: underline;
-            cursor: pointer;    
-        }
+        
         #planDetails {
             padding-bottom: 100px;
         }
-        .hideme {
-            display: none;
-        }
+        
         .tab-pane {
             padding-top: 10px;
            
@@ -27,18 +22,11 @@
         #column-main {
             padding-top: 20px;
             padding-left: 4%;
-            border-left: 2px solid #eee;
+            border-left: 1px solid #eee;
             min-height: 600px;
             /*box-shadow: -3px 0px -3px #eee;*/
         }
-        tfoot td {
-            background-color: #f0f6f6; }
-        .tr-clickable, clickable {
-            cursor: pointer;
-        }
-        .navbar {
-            margin-bottom: 5px;
-        }
+        
         .toast-top-right {
           top: 62px;
         }
@@ -48,11 +36,9 @@
         .text-focus {
             color: #004444;
         }
-        
         h3 button.btn.btn-sm.btn-default {
             padding: 0px 5px;
         }
-
         #collapseButton {
             position: fixed;
             top:80px;
@@ -132,6 +118,7 @@
 </asp:Content>
 
 <script runat="server">
+
     static string datafile = "~/PlanManager/testdata.txt";
     
     [WebMethod]

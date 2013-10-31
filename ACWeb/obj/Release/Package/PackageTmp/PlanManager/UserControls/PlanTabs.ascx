@@ -8,11 +8,11 @@
 -->
     <div class="pull-right hidden-print">
 
-        <div class="btn-group" data-bind="visible: !$root.selectedProject()">
+        <div class="btn-group" data-bind="visible: !$root.selectedProject() && !uiNew()">
             <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
                 Plan Actions <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu bump-left" role="menu">
                 <li><a href="#">Copy Plan</a></li>
                 <li><a href="#">Lock Plan</a></li>
                 <li><a href="#">Cancel Plan</a></li>
@@ -21,7 +21,7 @@
         </div>
         <button class="btn btn-sm btn-primary"
             data-bind="visible: uiNew() || uiDirty(), click: $root.savePlan">
-            Save</button>
+            Save Plan</button>
     </div>
 
     <!-- when a project is selected,
@@ -117,7 +117,7 @@ tabs appear here
                             <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
                                 Add Project <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu bump-left" role="menu">
                                 <li><a data-bind="click: $root.addProject"
                                     href="#">Empty Project</a></li>
                                 <li><a data-bind="click: $root.openSearch" href="#searchModal">AssetCALC Cost</a></li>

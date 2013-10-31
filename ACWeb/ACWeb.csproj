@@ -68,6 +68,8 @@
     <Content Include="Content\assetcalc\assetcalc.css" />
     <Content Include="Content\assetcalc\assetcalc.gridforms.css" />
     <Content Include="Content\assetcalc\assetcalc.colors.css" />
+    <Content Include="Content\assetcalc\assetcalc.table.css" />
+    <Content Include="Content\assetcalc\assetcalc.button.css" />
     <Content Include="Content\libs\gridforms.css" />
     <Content Include="Content\libs\bootstrap.css" />
     <Content Include="Content\libs\bootstrap.min.css" />
@@ -87,7 +89,7 @@
     <Content Include="Content\libs\bootstrap-chosen.less" />
     <Content Include="Menu.master" />
     <Content Include="PlanManager\Home.aspx" />
-    <Content Include="PlanManager\testdata.txt" />
+    <None Include="PlanManager\testdata.dev.txt" />
     <Content Include="PlanManager\UserControls\PlanForm.ascx" />
     <Content Include="PlanManager\UserControls\PlanTabs.ascx" />
     <Content Include="PlanManager\UserControls\ProjectAttachments.ascx" />

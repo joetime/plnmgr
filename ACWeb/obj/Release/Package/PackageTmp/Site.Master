@@ -19,6 +19,8 @@
 
     <link href="Content/assetcalc/assetcalc.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.chzn.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.table.css" rel="stylesheet" />
+    <link href="Content/assetcalc/assetcalc.button.css" rel="stylesheet" />
     
     <link href="Content/assetcalc/assetcalc.navbar.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.gridforms.css" rel="stylesheet" />

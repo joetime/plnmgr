@@ -1,0 +1,7 @@
+﻿
+/* Just give a dropdown menu a little
+    breathing room so it doesn't fall off the end
+    of the page */
+ul.dropdown-menu.bump-left {
+    left: -10px;
+}

@@ -1,0 +1,28 @@
+﻿
+/* Cell and header borders
+    */
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    border-top: 1px dotted #ddd;
+    padding: 12px;
+}
+.table thead > tr > th {
+    border-bottom: 1px solid #ddd;
+}
+
+/* For stupidtable plugin
+    */
+[data-sort="string"]:hover,[data-sort="float"]:hover,[data-sort="int"]:hover {
+    text-decoration: underline;
+    cursor: pointer;    
+}
+
+/* colored footer
+    */
+tfoot td {
+    background-color: #f0f6f6; }
+
+/* clickable row
+    */
+.tr-clickable {
+    cursor: pointer;
+}
