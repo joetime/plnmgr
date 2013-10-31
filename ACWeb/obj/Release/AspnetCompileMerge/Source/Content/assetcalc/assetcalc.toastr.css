@@ -1,0 +1,11 @@
+﻿
+
+/*
+    cleaner toast box
+*/
+#toast-container > div, 
+#toast-container > :hover {
+    box-shadow: 0 0 2px #000000;  
+    border-radius: 2px;
+    margin: 0px;
+}

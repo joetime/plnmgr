@@ -33,12 +33,7 @@
         #searchModal .modal-dialog {
             width: 70%;
         }
-        .text-focus {
-            color: #004444;
-        }
-        h3 button.btn.btn-sm.btn-default {
-            padding: 0px 5px;
-        }
+        
         #collapseButton {
             position: fixed;
             top:80px;
@@ -78,8 +73,8 @@
                     <li><br />
                          <button class="btn btn-success btn-sm" data-bind="click: newPlan">New Plan...</button> 
                          <!--<button class="btn btn-default btn-sm" data-bind="click: exportData">Export Data</button> 
-                        <button class="btn btn-default btn-sm" data-bind="click: loadData">Load</button> -->
-                        <button class="btn btn-default btn-sm" data-bind="click: writeData">Write</button> 
+                        <button class="btn btn-default btn-sm" data-bind="click: loadData">Load</button> 
+                        <button class="btn btn-default btn-sm" data-bind="click: writeData">Write</button>--> 
                     </li>
                     <!--
                     <li><textarea id="debugTextArea"></textarea></li>-->
@@ -102,15 +97,14 @@
 
 <asp:Content ContentPlaceHolderID="JavascriptPlaceHolder" runat="server">
     
-    <script src="Scripts/planmanager.testdata.js"></script>
-    <script src="Scripts/planmanager.dd.js"></script>
-    <script src="Scripts/planmanager.models.js"></script>
-    <script src="Scripts/planmanager.view.js"></script>
-
+    <script src="Scripts/planmanager.home.view.js"></script>
+    
     <script>
 
-        // bind model, 
-        // select first plan on load
+        /*  
+            bind model, 
+            select first plan on load
+        */
         $(document).ready(function () {
             ko.applyBindings(myPageModel);  
             myPageModel.loadData();         

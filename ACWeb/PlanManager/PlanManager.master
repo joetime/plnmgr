@@ -31,18 +31,36 @@
     <templates:SearchModal runat="server"></templates:SearchModal>
 
 
+    <script src="Scripts/planmanager.testdata.js"></script>
+    <script src="Scripts/planmanager.dd.js"></script>
+    <script src="Scripts/planmanager.models.js"></script>
 
-    <script src="../Scripts/planmanager.models.js"></script>    <!-- A file of test data for the page -->
-    
     <script>
         /// the masterpage viewmodel, will be extended by page viewmodel
         //
-        var masterPageModel = function () {
+        var masterPageModel = {
+
+            pageTitle: 'Arlington VA, Plans',
+            
+            username: ko.observable(),
+            login: function() {
+                myPageModel.username($("#usernameInput").val());
+                $("#mainPage").fadeIn().removeClass("hide");
+            },
+            logOut: function() {
+                myPageModel.username('');
+                $("#mainPage").addClass("hide");
+            },
+            loggedIn: function () {
+        
+                console.log('loggedIn: ' + myPageModel.username());
+                return myPageModel.username() && myPageModel.username().length > 0;
+            }
         };
     </script>
 
     <asp:ContentPlaceHolder ID="JavascriptPlaceHolder" runat="server"></asp:ContentPlaceHolder>
-
+    
 </asp:Content>
 
 
@@ -50,8 +68,51 @@
     <asp:ContentPlaceHolder ID="CssPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Aside" ContentPlaceHolderID="MenuLeft" runat="server">
+    
+        <li id="menulink-test" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                data-bind="text: username"> <b class="caret"
+                    data-bind="visible: loggedIn"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#" data-bind="click: notImplemented">My Account</a></li>
+                <li><a href="#" data-bind="click: logOut">Log Out</a></li>
+            </ul>
+        </li>
+    
     <asp:ContentPlaceHolder ID="AsidePlaceHolder" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content" ContentPlaceHolderID="Content" runat="server">
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+    <div id="mainPage" class="hide" data-bind="visible: false || loggedIn()">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+    </div>
+    <div data-bind="visible: !loggedIn()">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <br /><br /><br /><br />
+                <div class="grid-form">
+                    <fieldset>
+			            <legend>Please log in</legend>
+			            <div data-row-span="2">
+				            <div data-field-span="1" class="">
+					            <label>Email</label>
+					            <input id="usernameInput" 
+                                    type="text" autofocus required
+                                    placeholder="">
+				            </div>
+                            <div data-field-span="1" class="">
+					            <label>Password</label>
+					            <input type="password" 
+                                    placeholder="password">
+				            </div>
+			            </div>
+		            </fieldset>
+                </div>
+                <div>
+                    <br />
+                    <button class="btn btn-primary"
+                        data-bind="click: login">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>

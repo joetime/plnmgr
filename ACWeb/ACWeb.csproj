@@ -71,6 +71,7 @@
     <Content Include="Content\assetcalc\assetcalc.table.css" />
     <Content Include="Content\assetcalc\assetcalc.button.css" />
     <Content Include="Content\assetcalc\assetcalc.modal.css" />
+    <Content Include="Content\assetcalc\assetcalc.toastr.css" />
     <Content Include="Content\libs\gridforms.css" />
     <Content Include="Content\libs\bootstrap.css" />
     <Content Include="Content\libs\bootstrap.min.css" />
@@ -91,6 +92,7 @@
     <Content Include="Menu.master" />
     <Content Include="PlanManager\Home.aspx" />
     <None Include="PlanManager\testdata.txt" />
+    <Content Include="PlanManager\Scripts\planmanager.dd.js" />
     <Content Include="PlanManager\UserControls\PlanForm.ascx" />
     <Content Include="PlanManager\UserControls\PlanTabs.ascx" />
     <Content Include="PlanManager\UserControls\ProjectAttachments.ascx" />
@@ -107,20 +109,17 @@
     <None Include="Scripts\libs\jquery-2.0.2.intellisense.js" />
     <Content Include="Scripts\assetcalc.js" />
     <Content Include="Scripts\assetcalc.test.js" />
-    <Content Include="Scripts\libs\odometer.min.js" />
     <Content Include="PlanManager\Scripts\planmanager.models.js" />
-    <Content Include="PlanManager\Scripts\planmanager.view.js" />
+    <Content Include="PlanManager\Scripts\planmanager.home.view.js" />
     <Content Include="Scripts\libs\bootstrap.js" />
     <Content Include="Scripts\libs\bootstrap.min.js" />
+    <Content Include="Scripts\libs\knockout-dirtyflag.js" />
     <Content Include="Scripts\libs\underscore.js" />
-    <Content Include="Scripts\libs\xxbootstrap.js" />
-    <Content Include="Scripts\libs\xxbootstrap.min.js" />
     <Content Include="Scripts\libs\chart.js" />
     <Content Include="Scripts\chart.ko.js" />
     <Content Include="Scripts\chart.ko.test.js" />
     <Content Include="Scripts\libs\chosen.jquery.js" />
     <Content Include="Scripts\libs\chosen.jquery.min.js" />
-    <Content Include="Scripts\libs\holder.js" />
     <Content Include="Scripts\libs\jquery-2.0.2.js" />
     <Content Include="Scripts\libs\jquery-2.0.2.min.js" />
     <Content Include="Scripts\libs\jquery.cookie.js" />
@@ -287,7 +286,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
     <Folder Include="tmp\" />
   </ItemGroup>
   <PropertyGroup>

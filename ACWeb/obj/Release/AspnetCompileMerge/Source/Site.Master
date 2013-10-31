@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ACWeb.Site" %>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>AssetCALC by EMG</title>
@@ -12,20 +10,19 @@
     
     <link href="Content/libs/chosen.css" rel="stylesheet" />
     <link href="Content/libs/chosen-flatten.css" rel="stylesheet" />
-    <link href="Content/libs/toastr.css" rel="stylesheet" />
-    
+    <link href="Content/libs/toastr.css" rel="stylesheet" />    
     <link href="Content/libs/gridforms.css" rel="stylesheet" />
-
 
     <link href="Content/assetcalc/assetcalc.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.chzn.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.table.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.button.css" rel="stylesheet" />
-    
+    <link href="Content/assetcalc/assetcalc.modal.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.navbar.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.gridforms.css" rel="stylesheet" />
     <link href="Content/assetcalc/assetcalc.colors.css" rel="stylesheet" />
-    
+    <link href="Content/assetcalc/assetcalc.toastr.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="Css" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -42,10 +39,10 @@
     <script src="../Scripts/libs/underscore.js"></script>
     <script src="../Scripts/libs/jquery.cookie.js"></script>
     <script src="../Scripts/libs/knockout-2.2.1.js"></script>
+    <script src="../Scripts/libs/knockout-dirtyflag.js"></script>
     <script src="../Scripts/libs/toastr.min.js"></script>
     <script src="../Scripts/libs/bootstrap.min.js"></script>
     <script src="../Scripts/libs/chosen.jquery.min.js"></script>
-    <script src="../Scripts/libs/holder.js"></script>
     <script src="../Scripts/libs/stupidtable.js"></script>
     <script src="../Scripts/libs/chart.js"></script>
     <!-- numeral library

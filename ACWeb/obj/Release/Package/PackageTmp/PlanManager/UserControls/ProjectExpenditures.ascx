@@ -6,7 +6,8 @@
         <h3 data-bind="text: 'Total Expenditures: $ ' + numeral(expendituresTotal()).format('0,0')"></h3>
 
         <div class="pull-right">
-            <button class="btn btn-sm btn-success">Add Expenditure</button>
+            <button class="btn btn-sm btn-success"
+                 data-bind="click: $root.notImplemented">Add Expenditure</button>
         </div>
     </div>
     <table class="table table-condensed table-hover">

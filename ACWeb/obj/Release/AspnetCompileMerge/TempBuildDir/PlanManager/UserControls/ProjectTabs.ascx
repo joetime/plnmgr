@@ -2,17 +2,27 @@
 
 <script id="projectTabsTemplate" type="text/template">
 
+    <!-- 
+        Button to return
+        Project Name
+        -->
     <h3>
-        <button class="btn btn-sm btn-default hidden-print" data-bind="click: $root.deselectProject">&#935;</button>
-        <span data-bind="text: name"></span></h3>
+        <button class="btn btn-sm btn-default hidden-print" data-bind="click: $root.deselectProject">
+            &larr;All Projects</button>
+        <span data-bind="text: name"></span>
+    </h3>
 
-    <!-- Buttons 
-    -->
+    <!-- 
+        Save Button
+        Action Button (Dropdown)
+        -->
     <div class="pull-right hidden-print">
-        <!--<span class="label label-info" data-bind="text: dirtyFlag.isDirty, click: $root.resetDirtyProject"></span>-->
-        <button type="button" class="btn btn-primary btn-sm"
-                data-bind="visible: dirtyFlag.isDirty">Save Changes</button>
-
+        
+        <!--
+        <button type="button" class="btn btn-primary btn-sm" 
+            data-bind="visible: dirtyFlag.isDirty, click: $root.saveProject">
+            Save Project</button>
+        -->
         <!-- Action Button -->
         <div class="btn-group">
             <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
@@ -20,25 +30,22 @@
             </button>
             <!-- Action Dropdown -->
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Move Project</a></li>
-                <li><a href="#">Copy Project</a></li>
-                <li><a href="#">Lock Project</a></li>
-                <li><a href="#">Cancel Project</a></li>
-                <li><a href="#">Delete Project</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Move Project</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Copy Project</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Lock Project</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Cancel Project</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Delete Project</a></li>
                 <li class="divider"></li>
                 <li><a href="#" data-bind="click: $root.clearExpenditures">Clear Expenditures</a></li>
             </ul>
         </div>
 
-        <!-- More Buttons 
-            -->
-        <button class="btn btn-sm btn-primary puxll-right"
-            data-bind="visible: uiNew || uiDirty, click: $root.saveProject">
-            Save</button>
     </div>
 
-    <!-- Tabs 
--->
+    <!-- 
+        Tabs - Details, Attachments, Estimate
+            Breakouts, Expenditures 
+        -->
     <ul class="nav nav-tabs">
         <li class="active"><a href="#projectDetails" data-toggle="tab">Details</a></li>
         <li><a href="#attachments" data-toggle="tab">Attachments</a></li>
@@ -47,8 +54,9 @@
         <li><a href="#expenditures" data-toggle="tab">Expenditures</a></li>
     </ul>
 
-    <!-- Content 
--->
+    <!-- 
+        Content 
+        -->
     <div class="tab-content">
         <div class="tab-pane active" id="projectDetails">
             <!-- ko template: { name: 'projectForm' } -->

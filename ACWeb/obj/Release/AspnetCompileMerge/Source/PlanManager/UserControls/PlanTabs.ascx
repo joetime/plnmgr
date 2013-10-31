@@ -7,21 +7,23 @@
     <!-- buttons 
 -->
     <div class="pull-right hidden-print">
+        
+        <button class="btn btn-sm btn-primary"
+            data-bind="visible: uiNew() || dirtyFlag.isDirty(), click: $root.savePlan">
+            Save Changes</button>
 
         <div class="btn-group" data-bind="visible: !$root.selectedProject() && !uiNew()">
             <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown">
                 Plan Actions <span class="caret"></span>
             </button>
             <ul class="dropdown-menu bump-left" role="menu">
-                <li><a href="#">Copy Plan</a></li>
-                <li><a href="#">Lock Plan</a></li>
-                <li><a href="#">Cancel Plan</a></li>
-                <li><a href="#">Delete Plan</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Copy Plan</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Lock Plan</a></li>
+                <li><a href="#" data-bind="click: $root.notImplemented">Cancel Plan</a></li>
+                <li><a href="#" data-bind="click: $root.deletePlan">Delete Plan</a></li>
             </ul>
         </div>
-        <button class="btn btn-sm btn-primary"
-            data-bind="visible: uiNew() || uiDirty(), click: $root.savePlan">
-            Save Plan</button>
+        
     </div>
 
     <!-- when a project is selected,

@@ -1,7 +1,18 @@
 ﻿
-/* Just give a dropdown menu a little
+/* 
+    Just give a dropdown menu a little
     breathing room so it doesn't fall off the end
-    of the page */
+    of the page 
+*/
 ul.dropdown-menu.bump-left {
     left: -10px;
 }
+
+/* 
+    A button within an h3
+*/
+h3 button.btn.btn-sm.btn-default {
+    padding: 0px 5px;
+    font-size: 14px;
+}
+

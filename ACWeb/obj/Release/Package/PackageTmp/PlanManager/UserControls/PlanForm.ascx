@@ -49,7 +49,6 @@
                     <label>Status</label>
                     <select class=""
                         data-bind="value: status, options: statusArray">
-                        <option value="">- Select - </option>
                     </select>
                 </div>
                 <div data-field-span="3">

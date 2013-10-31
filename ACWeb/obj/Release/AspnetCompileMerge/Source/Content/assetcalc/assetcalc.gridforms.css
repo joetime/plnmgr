@@ -8,9 +8,14 @@
 }
 /*  these inputs were not included */
 .grid-form input[type="date"], 
-.grid-form input[type="number"] {
+.grid-form input[type="number"],
+.grid-form input[type="password"] {
     background-color: transparent;
     font-size: 18px;
+    -webkit-appearance: none;
+    border: none;
+    padding-left: 3px;
+    width: 100%;
 }
 
 
@@ -32,14 +37,6 @@
 .grid-form [data-row-span] [data-field-span] {
     border-right: 1px dotted #ddd; }
 
-/* remove border these input */
-.grid-form input[type="date"], 
-.grid-form input[type="number"] {
-    -webkit-appearance: none;
-    border: none;
-    padding-left: 3px;
-    width: 100%;
-}
 /* remove border on select */
 .grid-form select {
     /*-webkit-appearance: none;*/

@@ -34,7 +34,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2013 15:40:15</publishTime>
     </File>
     <File Include="bin/ACWeb.dll">
-      <publishTime>10/30/2013 20:17:45</publishTime>
+      <publishTime>10/31/2013 12:40:52</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/15/2013 15:01:15</publishTime>
@@ -70,7 +70,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2013 13:21:50</publishTime>
     </File>
     <File Include="Content/assetcalc/assetcalc.button.css">
-      <publishTime>10/30/2013 19:51:47</publishTime>
+      <publishTime>10/31/2013 11:05:37</publishTime>
     </File>
     <File Include="Content/assetcalc/assetcalc.chzn.css">
       <publishTime>10/15/2013 15:01:14</publishTime>
@@ -82,13 +82,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2013 20:08:31</publishTime>
     </File>
     <File Include="Content/assetcalc/assetcalc.gridforms.css">
-      <publishTime>10/17/2013 09:47:29</publishTime>
+      <publishTime>10/31/2013 12:21:13</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.modal.css">
+      <publishTime>10/31/2013 09:54:13</publishTime>
     </File>
     <File Include="Content/assetcalc/assetcalc.navbar.css">
       <publishTime>10/30/2013 20:06:45</publishTime>
     </File>
     <File Include="Content/assetcalc/assetcalc.table.css">
       <publishTime>10/30/2013 20:04:38</publishTime>
+    </File>
+    <File Include="Content/assetcalc/assetcalc.toastr.css">
+      <publishTime>10/31/2013 11:02:14</publishTime>
     </File>
     <File Include="Content/bootstrap-chosen.less">
       <publishTime>07/10/2013 11:22:41</publishTime>
@@ -169,25 +175,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
     <File Include="Menu.master">
-      <publishTime>10/17/2013 09:05:01</publishTime>
+      <publishTime>10/31/2013 12:40:13</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>10/15/2013 15:01:15</publishTime>
     </File>
     <File Include="PlanManager/Home.aspx">
-      <publishTime>10/30/2013 20:17:35</publishTime>
+      <publishTime>10/31/2013 12:01:05</publishTime>
     </File>
     <File Include="PlanManager/PlanManager.master">
-      <publishTime>10/17/2013 09:49:05</publishTime>
+      <publishTime>10/31/2013 12:39:17</publishTime>
+    </File>
+    <File Include="PlanManager/Scripts/planmanager.dd.js">
+      <publishTime>10/31/2013 10:01:07</publishTime>
+    </File>
+    <File Include="PlanManager/Scripts/planmanager.home.view.js">
+      <publishTime>10/31/2013 12:02:47</publishTime>
+    </File>
+    <File Include="PlanManager/Scripts/planmanager.models.js">
+      <publishTime>10/31/2013 11:52:25</publishTime>
+    </File>
+    <File Include="PlanManager/Scripts/planmanager.testdata.js">
+      <publishTime>10/31/2013 09:51:15</publishTime>
     </File>
     <File Include="PlanManager/testdata.txt">
       <publishTime>10/30/2013 15:36:55</publishTime>
     </File>
     <File Include="PlanManager/UserControls/PlanForm.ascx">
-      <publishTime>10/17/2013 09:18:14</publishTime>
+      <publishTime>10/31/2013 10:36:10</publishTime>
     </File>
     <File Include="PlanManager/UserControls/PlanTabs.ascx">
-      <publishTime>10/30/2013 19:53:31</publishTime>
+      <publishTime>10/31/2013 11:48:51</publishTime>
     </File>
     <File Include="PlanManager/UserControls/ProjectAttachments.ascx">
       <publishTime>10/17/2013 10:13:02</publishTime>
@@ -199,19 +217,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/30/2013 13:16:20</publishTime>
     </File>
     <File Include="PlanManager/UserControls/ProjectExpenditures.ascx">
-      <publishTime>10/30/2013 13:48:57</publishTime>
+      <publishTime>10/31/2013 11:51:03</publishTime>
     </File>
     <File Include="PlanManager/UserControls/ProjectForm.ascx">
       <publishTime>10/30/2013 15:35:02</publishTime>
     </File>
     <File Include="PlanManager/UserControls/ProjectTabs.ascx">
-      <publishTime>10/30/2013 15:35:26</publishTime>
+      <publishTime>10/31/2013 11:50:25</publishTime>
     </File>
     <File Include="PlanManager/UserControls/SearchModal.ascx">
       <publishTime>10/17/2013 09:14:46</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/30/2013 20:17:52</publishTime>
+      <publishTime>10/31/2013 12:40:59</publishTime>
     </File>
     <File Include="ProjectManager/Home.aspx">
       <publishTime>10/15/2013 15:01:14</publishTime>
@@ -327,6 +345,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/libs/knockout-2.2.1.js">
       <publishTime>10/15/2013 15:01:14</publishTime>
     </File>
+    <File Include="Scripts/libs/knockout-dirtyflag.js">
+      <publishTime>10/31/2013 11:29:52</publishTime>
+    </File>
     <File Include="Scripts/libs/odometer.min.js">
       <publishTime>10/16/2013 08:21:47</publishTime>
     </File>
@@ -376,7 +397,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/10/2013 11:18:11</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>10/30/2013 19:50:25</publishTime>
+      <publishTime>10/31/2013 10:41:56</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>10/30/2013 20:17:50</publishTime>
